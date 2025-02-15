@@ -1,0 +1,3 @@
+class EndpointRequest {
+  const EndpointRequest();
+}

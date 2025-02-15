@@ -1,0 +1,3 @@
+class EndpointResponse {
+  const EndpointResponse();
+}
