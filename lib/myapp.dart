@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
+import 'package:expense_tracker/src/user_interface/_core/design_system/layouts/_imports.dart';
 
-import 'src/user_interface/_core/navigation/router.dart';
+import 'src/user_interface/_imports.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {

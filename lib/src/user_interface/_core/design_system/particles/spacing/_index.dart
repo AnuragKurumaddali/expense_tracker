@@ -1,0 +1,9 @@
+export 'tablet/tablet_bottom_paddings.dart';
+export 'tablet/tablet_horizontal_paddings.dart';
+export 'tablet/tablet_horizontal_spaces.dart';
+export 'tablet/tablet_left_paddings.dart';
+export 'tablet/tablet_paddings.dart';
+export 'tablet/tablet_right_paddings.dart';
+export 'tablet/tablet_top_paddings.dart';
+export 'tablet/tablet_vertical_paddings.dart';
+export 'tablet/tablet_vertical_spaces.dart';

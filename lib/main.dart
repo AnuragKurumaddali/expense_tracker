@@ -1,12 +1,11 @@
-import 'package:flutter/material.dart';
+import 'package:expense_tracker/src/user_interface/_core/design_system/layouts/_imports.dart';
 import 'myapp.dart';
 import 'src/composition/injection.dart';
 
-void main() async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
   configureDependencies();
 
-  // Run the app
   runApp(const MyApp());
 }
