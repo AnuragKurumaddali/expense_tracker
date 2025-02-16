@@ -20,6 +20,9 @@ mixin _$AddExpensePageState {
   HandledException get error => throw _privateConstructorUsedError;
   ExpenseData get expenseData => throw _privateConstructorUsedError;
   String get validationMessage => throw _privateConstructorUsedError;
+  String get selectedCategory => throw _privateConstructorUsedError;
+  DateTime get selectedDate => throw _privateConstructorUsedError;
+  List<String> get lsCategories => throw _privateConstructorUsedError;
   bool get isFormValid => throw _privateConstructorUsedError;
   Task<void> get addExpenseTask => throw _privateConstructorUsedError;
   Task<void> get getCategoriesTask => throw _privateConstructorUsedError;
@@ -42,6 +45,9 @@ abstract class $AddExpensePageStateCopyWith<$Res> {
       HandledException error,
       ExpenseData expenseData,
       String validationMessage,
+      String selectedCategory,
+      DateTime selectedDate,
+      List<String> lsCategories,
       bool isFormValid,
       Task<void> addExpenseTask,
       Task<void> getCategoriesTask});
@@ -69,6 +75,9 @@ class _$AddExpensePageStateCopyWithImpl<$Res, $Val extends AddExpensePageState>
     Object? error = null,
     Object? expenseData = null,
     Object? validationMessage = null,
+    Object? selectedCategory = null,
+    Object? selectedDate = null,
+    Object? lsCategories = null,
     Object? isFormValid = null,
     Object? addExpenseTask = null,
     Object? getCategoriesTask = null,
@@ -90,6 +99,18 @@ class _$AddExpensePageStateCopyWithImpl<$Res, $Val extends AddExpensePageState>
           ? _value.validationMessage
           : validationMessage // ignore: cast_nullable_to_non_nullable
               as String,
+      selectedCategory: null == selectedCategory
+          ? _value.selectedCategory
+          : selectedCategory // ignore: cast_nullable_to_non_nullable
+              as String,
+      selectedDate: null == selectedDate
+          ? _value.selectedDate
+          : selectedDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      lsCategories: null == lsCategories
+          ? _value.lsCategories
+          : lsCategories // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       isFormValid: null == isFormValid
           ? _value.isFormValid
           : isFormValid // ignore: cast_nullable_to_non_nullable
@@ -127,11 +148,11 @@ class _$AddExpensePageStateCopyWithImpl<$Res, $Val extends AddExpensePageState>
 }
 
 /// @nodoc
-abstract class _$$AddExpenseStateImplCopyWith<$Res>
+abstract class _$$AddExpensePageStateImplCopyWith<$Res>
     implements $AddExpensePageStateCopyWith<$Res> {
-  factory _$$AddExpenseStateImplCopyWith(_$AddExpenseStateImpl value,
-          $Res Function(_$AddExpenseStateImpl) then) =
-      __$$AddExpenseStateImplCopyWithImpl<$Res>;
+  factory _$$AddExpensePageStateImplCopyWith(_$AddExpensePageStateImpl value,
+          $Res Function(_$AddExpensePageStateImpl) then) =
+      __$$AddExpensePageStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -139,6 +160,9 @@ abstract class _$$AddExpenseStateImplCopyWith<$Res>
       HandledException error,
       ExpenseData expenseData,
       String validationMessage,
+      String selectedCategory,
+      DateTime selectedDate,
+      List<String> lsCategories,
       bool isFormValid,
       Task<void> addExpenseTask,
       Task<void> getCategoriesTask});
@@ -150,11 +174,11 @@ abstract class _$$AddExpenseStateImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AddExpenseStateImplCopyWithImpl<$Res>
-    extends _$AddExpensePageStateCopyWithImpl<$Res, _$AddExpenseStateImpl>
-    implements _$$AddExpenseStateImplCopyWith<$Res> {
-  __$$AddExpenseStateImplCopyWithImpl(
-      _$AddExpenseStateImpl _value, $Res Function(_$AddExpenseStateImpl) _then)
+class __$$AddExpensePageStateImplCopyWithImpl<$Res>
+    extends _$AddExpensePageStateCopyWithImpl<$Res, _$AddExpensePageStateImpl>
+    implements _$$AddExpensePageStateImplCopyWith<$Res> {
+  __$$AddExpensePageStateImplCopyWithImpl(_$AddExpensePageStateImpl _value,
+      $Res Function(_$AddExpensePageStateImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of AddExpensePageState
@@ -166,11 +190,14 @@ class __$$AddExpenseStateImplCopyWithImpl<$Res>
     Object? error = null,
     Object? expenseData = null,
     Object? validationMessage = null,
+    Object? selectedCategory = null,
+    Object? selectedDate = null,
+    Object? lsCategories = null,
     Object? isFormValid = null,
     Object? addExpenseTask = null,
     Object? getCategoriesTask = null,
   }) {
-    return _then(_$AddExpenseStateImpl(
+    return _then(_$AddExpensePageStateImpl(
       stateId: freezed == stateId
           ? _value.stateId
           : stateId // ignore: cast_nullable_to_non_nullable
@@ -187,6 +214,18 @@ class __$$AddExpenseStateImplCopyWithImpl<$Res>
           ? _value.validationMessage
           : validationMessage // ignore: cast_nullable_to_non_nullable
               as String,
+      selectedCategory: null == selectedCategory
+          ? _value.selectedCategory
+          : selectedCategory // ignore: cast_nullable_to_non_nullable
+              as String,
+      selectedDate: null == selectedDate
+          ? _value.selectedDate
+          : selectedDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      lsCategories: null == lsCategories
+          ? _value._lsCategories
+          : lsCategories // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       isFormValid: null == isFormValid
           ? _value.isFormValid
           : isFormValid // ignore: cast_nullable_to_non_nullable
@@ -205,16 +244,20 @@ class __$$AddExpenseStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AddExpenseStateImpl extends _AddExpenseState {
-  const _$AddExpenseStateImpl(
+class _$AddExpensePageStateImpl extends _AddExpensePageState {
+  const _$AddExpensePageStateImpl(
       {this.stateId,
       required this.error,
       required this.expenseData,
       required this.validationMessage,
+      required this.selectedCategory,
+      required this.selectedDate,
+      required final List<String> lsCategories,
       required this.isFormValid,
       required this.addExpenseTask,
       required this.getCategoriesTask})
-      : super._();
+      : _lsCategories = lsCategories,
+        super._();
 
   @override
   final StateId? stateId;
@@ -225,6 +268,18 @@ class _$AddExpenseStateImpl extends _AddExpenseState {
   @override
   final String validationMessage;
   @override
+  final String selectedCategory;
+  @override
+  final DateTime selectedDate;
+  final List<String> _lsCategories;
+  @override
+  List<String> get lsCategories {
+    if (_lsCategories is EqualUnmodifiableListView) return _lsCategories;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_lsCategories);
+  }
+
+  @override
   final bool isFormValid;
   @override
   final Task<void> addExpenseTask;
@@ -233,20 +288,26 @@ class _$AddExpenseStateImpl extends _AddExpenseState {
 
   @override
   String toString() {
-    return 'AddExpensePageState(stateId: $stateId, error: $error, expenseData: $expenseData, validationMessage: $validationMessage, isFormValid: $isFormValid, addExpenseTask: $addExpenseTask, getCategoriesTask: $getCategoriesTask)';
+    return 'AddExpensePageState(stateId: $stateId, error: $error, expenseData: $expenseData, validationMessage: $validationMessage, selectedCategory: $selectedCategory, selectedDate: $selectedDate, lsCategories: $lsCategories, isFormValid: $isFormValid, addExpenseTask: $addExpenseTask, getCategoriesTask: $getCategoriesTask)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AddExpenseStateImpl &&
+            other is _$AddExpensePageStateImpl &&
             (identical(other.stateId, stateId) || other.stateId == stateId) &&
             (identical(other.error, error) || other.error == error) &&
             (identical(other.expenseData, expenseData) ||
                 other.expenseData == expenseData) &&
             (identical(other.validationMessage, validationMessage) ||
                 other.validationMessage == validationMessage) &&
+            (identical(other.selectedCategory, selectedCategory) ||
+                other.selectedCategory == selectedCategory) &&
+            (identical(other.selectedDate, selectedDate) ||
+                other.selectedDate == selectedDate) &&
+            const DeepCollectionEquality()
+                .equals(other._lsCategories, _lsCategories) &&
             (identical(other.isFormValid, isFormValid) ||
                 other.isFormValid == isFormValid) &&
             (identical(other.addExpenseTask, addExpenseTask) ||
@@ -256,29 +317,42 @@ class _$AddExpenseStateImpl extends _AddExpenseState {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, stateId, error, expenseData,
-      validationMessage, isFormValid, addExpenseTask, getCategoriesTask);
+  int get hashCode => Object.hash(
+      runtimeType,
+      stateId,
+      error,
+      expenseData,
+      validationMessage,
+      selectedCategory,
+      selectedDate,
+      const DeepCollectionEquality().hash(_lsCategories),
+      isFormValid,
+      addExpenseTask,
+      getCategoriesTask);
 
   /// Create a copy of AddExpensePageState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$AddExpenseStateImplCopyWith<_$AddExpenseStateImpl> get copyWith =>
-      __$$AddExpenseStateImplCopyWithImpl<_$AddExpenseStateImpl>(
+  _$$AddExpensePageStateImplCopyWith<_$AddExpensePageStateImpl> get copyWith =>
+      __$$AddExpensePageStateImplCopyWithImpl<_$AddExpensePageStateImpl>(
           this, _$identity);
 }
 
-abstract class _AddExpenseState extends AddExpensePageState {
-  const factory _AddExpenseState(
+abstract class _AddExpensePageState extends AddExpensePageState {
+  const factory _AddExpensePageState(
       {final StateId? stateId,
       required final HandledException error,
       required final ExpenseData expenseData,
       required final String validationMessage,
+      required final String selectedCategory,
+      required final DateTime selectedDate,
+      required final List<String> lsCategories,
       required final bool isFormValid,
       required final Task<void> addExpenseTask,
-      required final Task<void> getCategoriesTask}) = _$AddExpenseStateImpl;
-  const _AddExpenseState._() : super._();
+      required final Task<void> getCategoriesTask}) = _$AddExpensePageStateImpl;
+  const _AddExpensePageState._() : super._();
 
   @override
   StateId? get stateId;
@@ -288,6 +362,12 @@ abstract class _AddExpenseState extends AddExpensePageState {
   ExpenseData get expenseData;
   @override
   String get validationMessage;
+  @override
+  String get selectedCategory;
+  @override
+  DateTime get selectedDate;
+  @override
+  List<String> get lsCategories;
   @override
   bool get isFormValid;
   @override
@@ -299,6 +379,6 @@ abstract class _AddExpenseState extends AddExpensePageState {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AddExpenseStateImplCopyWith<_$AddExpenseStateImpl> get copyWith =>
+  _$$AddExpensePageStateImplCopyWith<_$AddExpensePageStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

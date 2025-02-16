@@ -26,7 +26,7 @@ class ExpenseData extends ValueObject {
       : this(
     amount: 0.0,
     category: '',
-    date: DateTime(1970, 1, 1), // Default empty date
+    date: DateTime(2000), // Default empty date
     description: '',
   );
 

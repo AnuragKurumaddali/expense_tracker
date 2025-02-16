@@ -15,6 +15,7 @@ class DashboardPage extends StatelessWidget {
       builder: (context, data) {
         return BasicPage.home(
           padding: Particles.paddings.none,
+          isColoredAppBar: true,
           bottomBar: const SizedBox(),
           child: data.pageLoadTask.isRunning
               ? const Center(

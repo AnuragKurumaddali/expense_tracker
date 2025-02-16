@@ -108,11 +108,11 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i914.AddExpenseModuleUseCaseFactory>(() =>
         _i914.AddExpenseModuleUseCaseFactory(
             gh<_i334.AddExpenseModuleCommandFactory>()));
-    gh.factory<_i795.DashboardPageBloc>(() => _i795.DashboardPageBloc(
+    gh.factory<_i135.AddExpensePageBloc>(() => _i135.AddExpensePageBloc(
           gh<_i914.AddExpenseModuleUseCaseFactory>(),
           gh<_i541.UseCaseEngine>(),
         ));
-    gh.factory<_i135.AddExpenseBloc>(() => _i135.AddExpenseBloc(
+    gh.factory<_i795.DashboardPageBloc>(() => _i795.DashboardPageBloc(
           gh<_i914.AddExpenseModuleUseCaseFactory>(),
           gh<_i541.UseCaseEngine>(),
         ));

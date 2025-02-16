@@ -9,10 +9,10 @@ export 'add_expense_page_event.dart';
 export 'add_expense_page_state.dart';
 
 @injectable
-class AddExpenseBloc extends UseCaseBloc<AddExpensePageEvent, AddExpensePageState> {
+class AddExpensePageBloc extends UseCaseBloc<AddExpensePageEvent, AddExpensePageState> {
   final AddExpenseModuleUseCaseFactory _expenseUseCases;
 
-  AddExpenseBloc(this._expenseUseCases, UseCaseEngine useCaseEngine)
+  AddExpensePageBloc(this._expenseUseCases, UseCaseEngine useCaseEngine)
       : super(AddExpensePageState.initial(), useCaseEngine) {
     on<ValidateExpenseFields>((event, emit) {
       if (state.expenseData.amount <= 0) {
@@ -62,7 +62,22 @@ class AddExpenseBloc extends UseCaseBloc<AddExpensePageEvent, AddExpensePageStat
         done: (value) {
           final data = value as UpdateExpenseResponse;
           add(const ValidateExpenseFields());
-          return state.copyWith(expenseData: data.expenseData);
+          return state.copyWith(selectedCategory: data.expenseData.category,expenseData: data.expenseData);
+        },
+        failed: (error) => state.copyWith(error: error),
+        orElse: () => state,
+      ),
+    );
+
+    registerUseCase2(
+      _expenseUseCases.updateExpense,
+      (UpdateDateTime event) =>
+          UpdateExpenseRequest.date(event.dateTime, state.expenseData),
+      (Task<UpdateExpenseResponse> response) => response.maybeWhen(
+        done: (value) {
+          final data = value as UpdateExpenseResponse;
+          add(const ValidateExpenseFields());
+          return state.copyWith(selectedDate: data.expenseData.date,expenseData: data.expenseData);
         },
         failed: (error) => state.copyWith(error: error),
         orElse: () => state,
@@ -97,5 +112,5 @@ class AddExpenseBloc extends UseCaseBloc<AddExpensePageEvent, AddExpensePageStat
 }
 
 extension AddExpenseBlocExtensions on BuildContext {
-  AddExpenseBloc get bloc => read<AddExpenseBloc>();
+  AddExpensePageBloc get bloc => read<AddExpensePageBloc>();
 }

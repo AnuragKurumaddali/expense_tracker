@@ -8,6 +8,7 @@ sealed class UpdateExpenseRequest implements UseCaseRequest {
   const factory UpdateExpenseRequest.amount(String amount, ExpenseData expenseData) = UpdateExpenseAmount;
   const factory UpdateExpenseRequest.category(String category, ExpenseData expenseData) = UpdateExpenseCategory;
   const factory UpdateExpenseRequest.description(String description, ExpenseData expenseData) = UpdateExpenseDescription;
+  const factory UpdateExpenseRequest.date(DateTime modifiedDate, ExpenseData expenseData) = UpdateExpenseDate;
 }
 
 class UpdateExpenseResponse {
@@ -38,6 +39,13 @@ class UpdateExpenseDescription implements UpdateExpenseRequest{
   const UpdateExpenseDescription(this.description, this.expenseData);
 }
 
+class UpdateExpenseDate implements UpdateExpenseRequest{
+  @override
+  final ExpenseData expenseData;
+  final DateTime dateTime;
+  const UpdateExpenseDate(this.dateTime, this.expenseData);
+}
+
 class UpdateExpenses implements SyncUseCase<UpdateExpenseRequest, Task<UpdateExpenseResponse>> {
   @override
   final UpdateExpenseRequest request;
@@ -51,6 +59,7 @@ class UpdateExpenses implements SyncUseCase<UpdateExpenseRequest, Task<UpdateExp
         (final UpdateExpenseAmount r) => r.expenseData.updateAmount(double.tryParse(r.amount)??0.0),
         (final UpdateExpenseCategory r) => r.expenseData.updateCategory(r.category),
         (final UpdateExpenseDescription r) => r.expenseData.updateDescription(r.description),
+        (final UpdateExpenseDate r) => r.expenseData.updateDate(r.dateTime),
       };
       return Task.done(UpdateExpenseResponse(request, updateForm));
     }catch(error){

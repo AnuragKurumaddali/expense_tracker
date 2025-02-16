@@ -12,15 +12,21 @@ class AddExpensePageState with _$AddExpensePageState implements UiState {
     required HandledException error,
     required ExpenseData expenseData,
     required String validationMessage,
+    required String selectedCategory,
+    required DateTime selectedDate,
+    required List<String> lsCategories,
     required bool isFormValid,
     required Task<void> addExpenseTask,
     required Task<void> getCategoriesTask,
-  }) = _AddExpenseState;
+  }) = _AddExpensePageState;
 
   factory AddExpensePageState.initial() {
     return AddExpensePageState(
       error: const EmptyException(),
       expenseData: ExpenseData.empty(),
+      lsCategories: ['Food', 'Travel', 'Shopping', 'Entertainment', 'Other'],
+      selectedCategory: "",
+      selectedDate: DateTime.now(),
       validationMessage: "",
       isFormValid: false,
       addExpenseTask: const Task.idle(),
