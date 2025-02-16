@@ -10,6 +10,7 @@ class AddExpensePageEvent with _$AddExpensePageEvent implements UiEvent {
   const factory AddExpensePageEvent.updateAmount(String amount) = UpdateAmount;
   const factory AddExpensePageEvent.updateCategory(String category) = UpdateCategory;
   const factory AddExpensePageEvent.updateDescription(String description) = UpdateDescription;
+  const factory AddExpensePageEvent.updateDateTime(DateTime dateTime) = UpdateDateTime;
   const factory AddExpensePageEvent.validateExpenseFields() = ValidateExpenseFields;
 
 }

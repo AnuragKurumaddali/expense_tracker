@@ -23,6 +23,7 @@ mixin _$AddExpensePageEvent {
     required TResult Function(String amount) updateAmount,
     required TResult Function(String category) updateCategory,
     required TResult Function(String description) updateDescription,
+    required TResult Function(DateTime dateTime) updateDateTime,
     required TResult Function() validateExpenseFields,
   }) =>
       throw _privateConstructorUsedError;
@@ -33,6 +34,7 @@ mixin _$AddExpensePageEvent {
     TResult? Function(String amount)? updateAmount,
     TResult? Function(String category)? updateCategory,
     TResult? Function(String description)? updateDescription,
+    TResult? Function(DateTime dateTime)? updateDateTime,
     TResult? Function()? validateExpenseFields,
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +45,7 @@ mixin _$AddExpensePageEvent {
     TResult Function(String amount)? updateAmount,
     TResult Function(String category)? updateCategory,
     TResult Function(String description)? updateDescription,
+    TResult Function(DateTime dateTime)? updateDateTime,
     TResult Function()? validateExpenseFields,
     required TResult orElse(),
   }) =>
@@ -54,6 +57,7 @@ mixin _$AddExpensePageEvent {
     required TResult Function(UpdateAmount value) updateAmount,
     required TResult Function(UpdateCategory value) updateCategory,
     required TResult Function(UpdateDescription value) updateDescription,
+    required TResult Function(UpdateDateTime value) updateDateTime,
     required TResult Function(ValidateExpenseFields value)
         validateExpenseFields,
   }) =>
@@ -65,6 +69,7 @@ mixin _$AddExpensePageEvent {
     TResult? Function(UpdateAmount value)? updateAmount,
     TResult? Function(UpdateCategory value)? updateCategory,
     TResult? Function(UpdateDescription value)? updateDescription,
+    TResult? Function(UpdateDateTime value)? updateDateTime,
     TResult? Function(ValidateExpenseFields value)? validateExpenseFields,
   }) =>
       throw _privateConstructorUsedError;
@@ -75,6 +80,7 @@ mixin _$AddExpensePageEvent {
     TResult Function(UpdateAmount value)? updateAmount,
     TResult Function(UpdateCategory value)? updateCategory,
     TResult Function(UpdateDescription value)? updateDescription,
+    TResult Function(UpdateDateTime value)? updateDateTime,
     TResult Function(ValidateExpenseFields value)? validateExpenseFields,
     required TResult orElse(),
   }) =>
@@ -108,6 +114,7 @@ class _$SaveExpenseEventImpl implements SaveExpenseEvent {
     required TResult Function(String amount) updateAmount,
     required TResult Function(String category) updateCategory,
     required TResult Function(String description) updateDescription,
+    required TResult Function(DateTime dateTime) updateDateTime,
     required TResult Function() validateExpenseFields,
   }) {
     return addExpense();
@@ -121,6 +128,7 @@ class _$SaveExpenseEventImpl implements SaveExpenseEvent {
     TResult? Function(String amount)? updateAmount,
     TResult? Function(String category)? updateCategory,
     TResult? Function(String description)? updateDescription,
+    TResult? Function(DateTime dateTime)? updateDateTime,
     TResult? Function()? validateExpenseFields,
   }) {
     return addExpense?.call();
@@ -134,6 +142,7 @@ class _$SaveExpenseEventImpl implements SaveExpenseEvent {
     TResult Function(String amount)? updateAmount,
     TResult Function(String category)? updateCategory,
     TResult Function(String description)? updateDescription,
+    TResult Function(DateTime dateTime)? updateDateTime,
     TResult Function()? validateExpenseFields,
     required TResult orElse(),
   }) {
@@ -151,6 +160,7 @@ class _$SaveExpenseEventImpl implements SaveExpenseEvent {
     required TResult Function(UpdateAmount value) updateAmount,
     required TResult Function(UpdateCategory value) updateCategory,
     required TResult Function(UpdateDescription value) updateDescription,
+    required TResult Function(UpdateDateTime value) updateDateTime,
     required TResult Function(ValidateExpenseFields value)
         validateExpenseFields,
   }) {
@@ -165,6 +175,7 @@ class _$SaveExpenseEventImpl implements SaveExpenseEvent {
     TResult? Function(UpdateAmount value)? updateAmount,
     TResult? Function(UpdateCategory value)? updateCategory,
     TResult? Function(UpdateDescription value)? updateDescription,
+    TResult? Function(UpdateDateTime value)? updateDateTime,
     TResult? Function(ValidateExpenseFields value)? validateExpenseFields,
   }) {
     return addExpense?.call(this);
@@ -178,6 +189,7 @@ class _$SaveExpenseEventImpl implements SaveExpenseEvent {
     TResult Function(UpdateAmount value)? updateAmount,
     TResult Function(UpdateCategory value)? updateCategory,
     TResult Function(UpdateDescription value)? updateDescription,
+    TResult Function(UpdateDateTime value)? updateDateTime,
     TResult Function(ValidateExpenseFields value)? validateExpenseFields,
     required TResult orElse(),
   }) {
@@ -219,6 +231,7 @@ class _$GetAllCategoriesImpl implements GetAllCategories {
     required TResult Function(String amount) updateAmount,
     required TResult Function(String category) updateCategory,
     required TResult Function(String description) updateDescription,
+    required TResult Function(DateTime dateTime) updateDateTime,
     required TResult Function() validateExpenseFields,
   }) {
     return getAllCategories();
@@ -232,6 +245,7 @@ class _$GetAllCategoriesImpl implements GetAllCategories {
     TResult? Function(String amount)? updateAmount,
     TResult? Function(String category)? updateCategory,
     TResult? Function(String description)? updateDescription,
+    TResult? Function(DateTime dateTime)? updateDateTime,
     TResult? Function()? validateExpenseFields,
   }) {
     return getAllCategories?.call();
@@ -245,6 +259,7 @@ class _$GetAllCategoriesImpl implements GetAllCategories {
     TResult Function(String amount)? updateAmount,
     TResult Function(String category)? updateCategory,
     TResult Function(String description)? updateDescription,
+    TResult Function(DateTime dateTime)? updateDateTime,
     TResult Function()? validateExpenseFields,
     required TResult orElse(),
   }) {
@@ -262,6 +277,7 @@ class _$GetAllCategoriesImpl implements GetAllCategories {
     required TResult Function(UpdateAmount value) updateAmount,
     required TResult Function(UpdateCategory value) updateCategory,
     required TResult Function(UpdateDescription value) updateDescription,
+    required TResult Function(UpdateDateTime value) updateDateTime,
     required TResult Function(ValidateExpenseFields value)
         validateExpenseFields,
   }) {
@@ -276,6 +292,7 @@ class _$GetAllCategoriesImpl implements GetAllCategories {
     TResult? Function(UpdateAmount value)? updateAmount,
     TResult? Function(UpdateCategory value)? updateCategory,
     TResult? Function(UpdateDescription value)? updateDescription,
+    TResult? Function(UpdateDateTime value)? updateDateTime,
     TResult? Function(ValidateExpenseFields value)? validateExpenseFields,
   }) {
     return getAllCategories?.call(this);
@@ -289,6 +306,7 @@ class _$GetAllCategoriesImpl implements GetAllCategories {
     TResult Function(UpdateAmount value)? updateAmount,
     TResult Function(UpdateCategory value)? updateCategory,
     TResult Function(UpdateDescription value)? updateDescription,
+    TResult Function(UpdateDateTime value)? updateDateTime,
     TResult Function(ValidateExpenseFields value)? validateExpenseFields,
     required TResult orElse(),
   }) {
@@ -335,6 +353,7 @@ class _$UpdateAmountImpl implements UpdateAmount {
     required TResult Function(String amount) updateAmount,
     required TResult Function(String category) updateCategory,
     required TResult Function(String description) updateDescription,
+    required TResult Function(DateTime dateTime) updateDateTime,
     required TResult Function() validateExpenseFields,
   }) {
     return updateAmount(amount);
@@ -348,6 +367,7 @@ class _$UpdateAmountImpl implements UpdateAmount {
     TResult? Function(String amount)? updateAmount,
     TResult? Function(String category)? updateCategory,
     TResult? Function(String description)? updateDescription,
+    TResult? Function(DateTime dateTime)? updateDateTime,
     TResult? Function()? validateExpenseFields,
   }) {
     return updateAmount?.call(amount);
@@ -361,6 +381,7 @@ class _$UpdateAmountImpl implements UpdateAmount {
     TResult Function(String amount)? updateAmount,
     TResult Function(String category)? updateCategory,
     TResult Function(String description)? updateDescription,
+    TResult Function(DateTime dateTime)? updateDateTime,
     TResult Function()? validateExpenseFields,
     required TResult orElse(),
   }) {
@@ -378,6 +399,7 @@ class _$UpdateAmountImpl implements UpdateAmount {
     required TResult Function(UpdateAmount value) updateAmount,
     required TResult Function(UpdateCategory value) updateCategory,
     required TResult Function(UpdateDescription value) updateDescription,
+    required TResult Function(UpdateDateTime value) updateDateTime,
     required TResult Function(ValidateExpenseFields value)
         validateExpenseFields,
   }) {
@@ -392,6 +414,7 @@ class _$UpdateAmountImpl implements UpdateAmount {
     TResult? Function(UpdateAmount value)? updateAmount,
     TResult? Function(UpdateCategory value)? updateCategory,
     TResult? Function(UpdateDescription value)? updateDescription,
+    TResult? Function(UpdateDateTime value)? updateDateTime,
     TResult? Function(ValidateExpenseFields value)? validateExpenseFields,
   }) {
     return updateAmount?.call(this);
@@ -405,6 +428,7 @@ class _$UpdateAmountImpl implements UpdateAmount {
     TResult Function(UpdateAmount value)? updateAmount,
     TResult Function(UpdateCategory value)? updateCategory,
     TResult Function(UpdateDescription value)? updateDescription,
+    TResult Function(UpdateDateTime value)? updateDateTime,
     TResult Function(ValidateExpenseFields value)? validateExpenseFields,
     required TResult orElse(),
   }) {
@@ -454,6 +478,7 @@ class _$UpdateCategoryImpl implements UpdateCategory {
     required TResult Function(String amount) updateAmount,
     required TResult Function(String category) updateCategory,
     required TResult Function(String description) updateDescription,
+    required TResult Function(DateTime dateTime) updateDateTime,
     required TResult Function() validateExpenseFields,
   }) {
     return updateCategory(category);
@@ -467,6 +492,7 @@ class _$UpdateCategoryImpl implements UpdateCategory {
     TResult? Function(String amount)? updateAmount,
     TResult? Function(String category)? updateCategory,
     TResult? Function(String description)? updateDescription,
+    TResult? Function(DateTime dateTime)? updateDateTime,
     TResult? Function()? validateExpenseFields,
   }) {
     return updateCategory?.call(category);
@@ -480,6 +506,7 @@ class _$UpdateCategoryImpl implements UpdateCategory {
     TResult Function(String amount)? updateAmount,
     TResult Function(String category)? updateCategory,
     TResult Function(String description)? updateDescription,
+    TResult Function(DateTime dateTime)? updateDateTime,
     TResult Function()? validateExpenseFields,
     required TResult orElse(),
   }) {
@@ -497,6 +524,7 @@ class _$UpdateCategoryImpl implements UpdateCategory {
     required TResult Function(UpdateAmount value) updateAmount,
     required TResult Function(UpdateCategory value) updateCategory,
     required TResult Function(UpdateDescription value) updateDescription,
+    required TResult Function(UpdateDateTime value) updateDateTime,
     required TResult Function(ValidateExpenseFields value)
         validateExpenseFields,
   }) {
@@ -511,6 +539,7 @@ class _$UpdateCategoryImpl implements UpdateCategory {
     TResult? Function(UpdateAmount value)? updateAmount,
     TResult? Function(UpdateCategory value)? updateCategory,
     TResult? Function(UpdateDescription value)? updateDescription,
+    TResult? Function(UpdateDateTime value)? updateDateTime,
     TResult? Function(ValidateExpenseFields value)? validateExpenseFields,
   }) {
     return updateCategory?.call(this);
@@ -524,6 +553,7 @@ class _$UpdateCategoryImpl implements UpdateCategory {
     TResult Function(UpdateAmount value)? updateAmount,
     TResult Function(UpdateCategory value)? updateCategory,
     TResult Function(UpdateDescription value)? updateDescription,
+    TResult Function(UpdateDateTime value)? updateDateTime,
     TResult Function(ValidateExpenseFields value)? validateExpenseFields,
     required TResult orElse(),
   }) {
@@ -573,6 +603,7 @@ class _$UpdateDescriptionImpl implements UpdateDescription {
     required TResult Function(String amount) updateAmount,
     required TResult Function(String category) updateCategory,
     required TResult Function(String description) updateDescription,
+    required TResult Function(DateTime dateTime) updateDateTime,
     required TResult Function() validateExpenseFields,
   }) {
     return updateDescription(description);
@@ -586,6 +617,7 @@ class _$UpdateDescriptionImpl implements UpdateDescription {
     TResult? Function(String amount)? updateAmount,
     TResult? Function(String category)? updateCategory,
     TResult? Function(String description)? updateDescription,
+    TResult? Function(DateTime dateTime)? updateDateTime,
     TResult? Function()? validateExpenseFields,
   }) {
     return updateDescription?.call(description);
@@ -599,6 +631,7 @@ class _$UpdateDescriptionImpl implements UpdateDescription {
     TResult Function(String amount)? updateAmount,
     TResult Function(String category)? updateCategory,
     TResult Function(String description)? updateDescription,
+    TResult Function(DateTime dateTime)? updateDateTime,
     TResult Function()? validateExpenseFields,
     required TResult orElse(),
   }) {
@@ -616,6 +649,7 @@ class _$UpdateDescriptionImpl implements UpdateDescription {
     required TResult Function(UpdateAmount value) updateAmount,
     required TResult Function(UpdateCategory value) updateCategory,
     required TResult Function(UpdateDescription value) updateDescription,
+    required TResult Function(UpdateDateTime value) updateDateTime,
     required TResult Function(ValidateExpenseFields value)
         validateExpenseFields,
   }) {
@@ -630,6 +664,7 @@ class _$UpdateDescriptionImpl implements UpdateDescription {
     TResult? Function(UpdateAmount value)? updateAmount,
     TResult? Function(UpdateCategory value)? updateCategory,
     TResult? Function(UpdateDescription value)? updateDescription,
+    TResult? Function(UpdateDateTime value)? updateDateTime,
     TResult? Function(ValidateExpenseFields value)? validateExpenseFields,
   }) {
     return updateDescription?.call(this);
@@ -643,6 +678,7 @@ class _$UpdateDescriptionImpl implements UpdateDescription {
     TResult Function(UpdateAmount value)? updateAmount,
     TResult Function(UpdateCategory value)? updateCategory,
     TResult Function(UpdateDescription value)? updateDescription,
+    TResult Function(UpdateDateTime value)? updateDateTime,
     TResult Function(ValidateExpenseFields value)? validateExpenseFields,
     required TResult orElse(),
   }) {
@@ -658,6 +694,131 @@ abstract class UpdateDescription implements AddExpensePageEvent {
       _$UpdateDescriptionImpl;
 
   String get description;
+}
+
+/// @nodoc
+
+class _$UpdateDateTimeImpl implements UpdateDateTime {
+  const _$UpdateDateTimeImpl(this.dateTime);
+
+  @override
+  final DateTime dateTime;
+
+  @override
+  String toString() {
+    return 'AddExpensePageEvent.updateDateTime(dateTime: $dateTime)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateDateTimeImpl &&
+            (identical(other.dateTime, dateTime) ||
+                other.dateTime == dateTime));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, dateTime);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() addExpense,
+    required TResult Function() getAllCategories,
+    required TResult Function(String amount) updateAmount,
+    required TResult Function(String category) updateCategory,
+    required TResult Function(String description) updateDescription,
+    required TResult Function(DateTime dateTime) updateDateTime,
+    required TResult Function() validateExpenseFields,
+  }) {
+    return updateDateTime(dateTime);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? addExpense,
+    TResult? Function()? getAllCategories,
+    TResult? Function(String amount)? updateAmount,
+    TResult? Function(String category)? updateCategory,
+    TResult? Function(String description)? updateDescription,
+    TResult? Function(DateTime dateTime)? updateDateTime,
+    TResult? Function()? validateExpenseFields,
+  }) {
+    return updateDateTime?.call(dateTime);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? addExpense,
+    TResult Function()? getAllCategories,
+    TResult Function(String amount)? updateAmount,
+    TResult Function(String category)? updateCategory,
+    TResult Function(String description)? updateDescription,
+    TResult Function(DateTime dateTime)? updateDateTime,
+    TResult Function()? validateExpenseFields,
+    required TResult orElse(),
+  }) {
+    if (updateDateTime != null) {
+      return updateDateTime(dateTime);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SaveExpenseEvent value) addExpense,
+    required TResult Function(GetAllCategories value) getAllCategories,
+    required TResult Function(UpdateAmount value) updateAmount,
+    required TResult Function(UpdateCategory value) updateCategory,
+    required TResult Function(UpdateDescription value) updateDescription,
+    required TResult Function(UpdateDateTime value) updateDateTime,
+    required TResult Function(ValidateExpenseFields value)
+        validateExpenseFields,
+  }) {
+    return updateDateTime(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SaveExpenseEvent value)? addExpense,
+    TResult? Function(GetAllCategories value)? getAllCategories,
+    TResult? Function(UpdateAmount value)? updateAmount,
+    TResult? Function(UpdateCategory value)? updateCategory,
+    TResult? Function(UpdateDescription value)? updateDescription,
+    TResult? Function(UpdateDateTime value)? updateDateTime,
+    TResult? Function(ValidateExpenseFields value)? validateExpenseFields,
+  }) {
+    return updateDateTime?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SaveExpenseEvent value)? addExpense,
+    TResult Function(GetAllCategories value)? getAllCategories,
+    TResult Function(UpdateAmount value)? updateAmount,
+    TResult Function(UpdateCategory value)? updateCategory,
+    TResult Function(UpdateDescription value)? updateDescription,
+    TResult Function(UpdateDateTime value)? updateDateTime,
+    TResult Function(ValidateExpenseFields value)? validateExpenseFields,
+    required TResult orElse(),
+  }) {
+    if (updateDateTime != null) {
+      return updateDateTime(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateDateTime implements AddExpensePageEvent {
+  const factory UpdateDateTime(final DateTime dateTime) = _$UpdateDateTimeImpl;
+
+  DateTime get dateTime;
 }
 
 /// @nodoc
@@ -688,6 +849,7 @@ class _$ValidateExpenseFieldsImpl implements ValidateExpenseFields {
     required TResult Function(String amount) updateAmount,
     required TResult Function(String category) updateCategory,
     required TResult Function(String description) updateDescription,
+    required TResult Function(DateTime dateTime) updateDateTime,
     required TResult Function() validateExpenseFields,
   }) {
     return validateExpenseFields();
@@ -701,6 +863,7 @@ class _$ValidateExpenseFieldsImpl implements ValidateExpenseFields {
     TResult? Function(String amount)? updateAmount,
     TResult? Function(String category)? updateCategory,
     TResult? Function(String description)? updateDescription,
+    TResult? Function(DateTime dateTime)? updateDateTime,
     TResult? Function()? validateExpenseFields,
   }) {
     return validateExpenseFields?.call();
@@ -714,6 +877,7 @@ class _$ValidateExpenseFieldsImpl implements ValidateExpenseFields {
     TResult Function(String amount)? updateAmount,
     TResult Function(String category)? updateCategory,
     TResult Function(String description)? updateDescription,
+    TResult Function(DateTime dateTime)? updateDateTime,
     TResult Function()? validateExpenseFields,
     required TResult orElse(),
   }) {
@@ -731,6 +895,7 @@ class _$ValidateExpenseFieldsImpl implements ValidateExpenseFields {
     required TResult Function(UpdateAmount value) updateAmount,
     required TResult Function(UpdateCategory value) updateCategory,
     required TResult Function(UpdateDescription value) updateDescription,
+    required TResult Function(UpdateDateTime value) updateDateTime,
     required TResult Function(ValidateExpenseFields value)
         validateExpenseFields,
   }) {
@@ -745,6 +910,7 @@ class _$ValidateExpenseFieldsImpl implements ValidateExpenseFields {
     TResult? Function(UpdateAmount value)? updateAmount,
     TResult? Function(UpdateCategory value)? updateCategory,
     TResult? Function(UpdateDescription value)? updateDescription,
+    TResult? Function(UpdateDateTime value)? updateDateTime,
     TResult? Function(ValidateExpenseFields value)? validateExpenseFields,
   }) {
     return validateExpenseFields?.call(this);
@@ -758,6 +924,7 @@ class _$ValidateExpenseFieldsImpl implements ValidateExpenseFields {
     TResult Function(UpdateAmount value)? updateAmount,
     TResult Function(UpdateCategory value)? updateCategory,
     TResult Function(UpdateDescription value)? updateDescription,
+    TResult Function(UpdateDateTime value)? updateDateTime,
     TResult Function(ValidateExpenseFields value)? validateExpenseFields,
     required TResult orElse(),
   }) {

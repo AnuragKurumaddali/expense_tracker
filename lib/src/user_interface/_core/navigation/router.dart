@@ -32,7 +32,7 @@ class AppRouter {
       GoRoute(
         path: AppRoute.addExpense,
         builder: (context, state) => BlocProvider(
-          create: (_) => getIt.get<AddExpenseBloc>(),
+          create: (_) => getIt.get<AddExpensePageBloc>(),
           child: const AddExpensePage(),
         ),
       ),

@@ -1,4 +1,3 @@
-import 'package:flutter/services.dart' show Brightness, Size, SystemUiOverlayStyle;
 import 'package:go_router/go_router.dart';
 
 import '_imports.dart';
@@ -36,13 +35,13 @@ class _CustomAppBarState extends State<CustomAppBar> {
   @override
   AppBar build(BuildContext context) {
     return AppBar(
-      backgroundColor: widget.coloredAppBar ? Particles.colors.primary : Colors.white,
+      backgroundColor: widget.coloredAppBar ? Particles.colors.secondaryText : Colors.white,
       shadowColor: Colors.white,
       elevation: 0.5,
-      systemOverlayStyle: const SystemUiOverlayStyle(
-        statusBarBrightness: Brightness.light,
-        systemNavigationBarIconBrightness: Brightness.dark,
-      ),
+      // systemOverlayStyle: const SystemUiOverlayStyle(
+      //   statusBarBrightness: Brightness.light,
+      //   systemNavigationBarIconBrightness: Brightness.dark,
+      // ),
       titleSpacing: 20, // Remove spacing for title
       leadingWidth: widget.showBackNav ? null : 30, // No width for leading when not used
       title: Stack(
