@@ -1,17 +1,11 @@
-import 'package:injectable/injectable.dart';
+import 'local_data_store.dart';
 import 'package:sqflite/sqflite.dart';
-import 'local_data_store_impl.dart';
+import '../../user_interface/_bloc_imports.dart';
 
 @module
 abstract class DatabaseModule {
   @preResolve
   @singleton
-  Future<Database> get database async => await LocalDataStoreImpl.initDatabase();
+  Future<Database> get database async => await LocalDataStore.initDatabase();
 
-  @preResolve
-  @singleton
-  Future<LocalDataStoreImpl> get expenseLocalDataSource async {
-    final db = await database;
-    return LocalDataStoreImpl(db);
-  }
 }
