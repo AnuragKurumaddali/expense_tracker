@@ -1,6 +1,7 @@
+import 'package:expense_tracker/src/user_interface/dashboard/dialogs/add_expense_dialog.dart';
+
 import '../_bloc_imports.dart';
 import '../_core/design_system/layouts/_imports.dart';
-import '../_core/design_system/widgets/buttons/planar_button.dart';
 import '../_page_imports.dart';
 import 'dashboard_page_bloc.dart';
 import 'widgets/expense_list_item.dart';
@@ -12,14 +13,19 @@ class DashboardPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocSelector<DashboardPageBloc, DashboardPageState, DashboardPageState>(
       selector: (state) => state,
-      builder: (context, data) {
+      builder: (contex, data) {
         return BasicPage.home(
           padding: Particles.paddings.none,
           isColoredAppBar: true,
           bottomBar: const SizedBox(),
+          fab: FloatingActionButton(
+            onPressed: () => _showAddExpenseDialog(context: context),
+            backgroundColor: Colors.black,
+            child: const Icon(Icons.add,color: Colors.white,), // Custom color for the button
+          ),
           child: data.pageLoadTask.isRunning
               ? const Center(
-                  child: CircularProgressIndicator(color: Colors.green),
+                  child: CircularProgressIndicator(color: Colors.black),
                 )
               : ColoredBox(
                   color: Colors.white,
@@ -37,19 +43,27 @@ class DashboardPage extends StatelessWidget {
                           indent: 16,
                           endIndent: 16,
                         ),
-                      ),
-                      Positioned(
-                        bottom: 16,
-                        left: 16,
-                        right: 16,
-                        child: PlanarButton(
-                          label: 'Add Expense',
-                          onPressed: () => context.push(AppRoute.addExpense)
-                        ),
-                      ),
+                      )
                     ],
                   ),
                 ),
+        );
+      },
+    );
+  }
+
+  void _showAddExpenseDialog({
+    required BuildContext context,
+  }) {
+    showDialog(
+      barrierDismissible: false,
+      context: context,
+      builder: (BuildContext contex) {
+        return BlocProvider.value(
+          value: BlocProvider.of<DashboardPageBloc>(context), // Pass the existing bloc to the dialog
+          child: Builder(
+            builder: (context) => const AddExpenseDialog(),
+          ),
         );
       },
     );

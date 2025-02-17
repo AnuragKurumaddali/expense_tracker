@@ -1,6 +1,6 @@
 import '../../_core/design_system/layouts/_imports.dart';
 import '../../_core/design_system/widgets/buttons/planar_button.dart';
-import '../add_expense_page_event.dart';
+import '../../dashboard/dashboard_page_bloc.dart';
 
 class AddExpenseButton extends StatelessWidget {
   final bool isFormValid;

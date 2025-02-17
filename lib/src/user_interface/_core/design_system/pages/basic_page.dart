@@ -27,6 +27,7 @@ class BasicPage extends StatefulWidget {
   final String? searchHintText;
   final ValueNotifier<bool>? showSearchField;
   final FocusNode? searchFocusNode;
+  final FloatingActionButton? fab;
 
   const BasicPage._internal({
     this.padding,
@@ -52,6 +53,7 @@ class BasicPage extends StatefulWidget {
     this.searchHintText,
     this.showSearchField,
     this.searchFocusNode,
+    this.fab,
   });
 
   const BasicPage({
@@ -69,6 +71,7 @@ class BasicPage extends StatefulWidget {
     String? searchHintText,
     ValueNotifier<bool>? showSearchField,
     FocusNode? searchFocusNode,
+    FloatingActionButton? fab
   }) : this._internal(
           padding: padding,
           onWillPop: onWillPop,
@@ -84,6 +87,7 @@ class BasicPage extends StatefulWidget {
           searchHintText: searchHintText,
           showSearchField: showSearchField,
           searchFocusNode: searchFocusNode,
+          fab: fab,
         );
 
   const BasicPage.home({
@@ -97,6 +101,7 @@ class BasicPage extends StatefulWidget {
     String? searchHintText,
     ValueNotifier<bool>? showSearchField,
     FocusNode? searchFocusNode,
+    FloatingActionButton? fab,
   }) : this._internal(
           padding: padding,
           isHomePage: true,
@@ -112,6 +117,7 @@ class BasicPage extends StatefulWidget {
           searchHintText: searchHintText,
           showSearchField: showSearchField,
           searchFocusNode: searchFocusNode,
+          fab: fab,
         );
 
   const BasicPage.appLoader({
@@ -166,6 +172,7 @@ class _BasicPageState extends State<BasicPage> {
                       ? Colors.white
                       : showSearchField ? Colors.white : const Color(0XFFF4F4F4),
                   extendBodyBehindAppBar: true,
+                  floatingActionButton: widget.isHomePage ? widget.fab : const SizedBox.shrink(),
                   appBar: widget.isLoginPage
                       ? const PreferredSize(
                           preferredSize: Size.fromHeight(0),

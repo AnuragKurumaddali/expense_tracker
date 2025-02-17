@@ -1,6 +1,6 @@
 import '../../_core/design_system/layouts/_imports.dart';
 import '../../_core/design_system/widgets/text_fields/primary_text_field.dart';
-import '../add_expense_page_event.dart';
+import '../../dashboard/dashboard_page_bloc.dart';
 
 class ExpenseDescriptionField extends StatelessWidget {
   final TextEditingController descriptionController;

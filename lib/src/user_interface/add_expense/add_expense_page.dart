@@ -22,7 +22,6 @@ class _AddExpensePageState extends State<AddExpensePage> {
     final titleController = TextEditingController();
     final descriptionController = TextEditingController();
     final categoryTextController = TextEditingController();
-    // final categoryPopUpController = TextEditingController();
 
     return BlocConsumer<AddExpensePageBloc, AddExpensePageState>(
       listener: (context, state) {

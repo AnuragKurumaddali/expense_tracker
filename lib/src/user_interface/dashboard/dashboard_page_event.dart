@@ -7,7 +7,13 @@ part 'dashboard_page_event.freezed.dart';
 @Freezed(copyWith: false)
 class DashboardPageEvent with _$DashboardPageEvent implements UiEvent {
   const factory DashboardPageEvent.onPageLoaded() = OnPageLoaded;
-
+  const factory DashboardPageEvent.addExpense() = SaveExpenseEvent;
+  const factory DashboardPageEvent.getAllCategories() = GetAllCategories;
+  const factory DashboardPageEvent.updateAmount(String amount) = UpdateAmount;
+  const factory DashboardPageEvent.updateCategory(String category) = UpdateCategory;
+  const factory DashboardPageEvent.updateDescription(String description) = UpdateDescription;
+  const factory DashboardPageEvent.updateDateTime(DateTime dateTime) = UpdateDateTime;
+  const factory DashboardPageEvent.validateExpenseFields() = ValidateExpenseFields;
 }
 
 typedef Events = DashboardPageEvent;

@@ -17,7 +17,7 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   Size get preferredSize => const Size.fromHeight(50);
 
   const CustomAppBar({
-    Key? key,
+    super.key,
     this.title,
     this.actionIcon,
     this.leadingIcon,
@@ -25,7 +25,7 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
     this.coloredAppBar = false,
     required this.isHomePage,
     this.onWillPop,
-  }) : super(key: key);
+  });
 
   @override
   State<CustomAppBar> createState() => _CustomAppBarState();
@@ -70,7 +70,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
                   ? const Offstage()
                   : IconButton(
                       color: widget.coloredAppBar ? Colors.white : Colors.black,
-                      icon: SvgPicture.asset(width: 24, height: 24, Assets.icons.backIcon),
+                      icon: const Icon(Icons.close_rounded, color: Colors.white,size: 24,),
                       onPressed: () async {
                         GoRouter.of(context).pop();
                       })),
