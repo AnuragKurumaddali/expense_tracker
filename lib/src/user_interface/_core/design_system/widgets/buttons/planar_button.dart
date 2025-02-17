@@ -23,7 +23,7 @@ class PlanarButton extends StatelessWidget {
     this.width,
     required this.onPressed,
     required this.label,
-    this.color = const Color(0xFF06B82D),
+    this.color = Colors.black,
   });
 
   @override
@@ -46,7 +46,7 @@ class PlanarButton extends StatelessWidget {
                 foregroundColor: Colors.white,
                 minimumSize: Size(width ?? 200, 50),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(50),
+                  borderRadius: Particles.borderRadiusCircular.small,
                 ),
               ),
               onPressed: disabled ? null : onPressed,
@@ -71,7 +71,7 @@ class _PlanarButtonBackground extends StatelessWidget {
   const _PlanarButtonBackground({
     required this.child,
     this.disabled = false,
-    this.widgetColor = const Color(0XFF6ABD45),
+    this.widgetColor = Colors.black,
   });
 
   @override
@@ -81,7 +81,7 @@ class _PlanarButtonBackground extends StatelessWidget {
       child: DecoratedBox(
         decoration: BoxDecoration(
           color: disabled ? Colors.grey.shade300 : widgetColor,
-          borderRadius: Particles.borderRadiusCircular.large,
+          borderRadius: Particles.borderRadiusCircular.small,
         ),
         child: child,
       ),

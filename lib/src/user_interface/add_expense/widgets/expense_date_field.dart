@@ -1,4 +1,4 @@
-import 'package:expense_tracker/src/user_interface/add_expense/add_expense_page_bloc.dart';
+import 'package:expense_tracker/src/user_interface/dashboard/dashboard_page_bloc.dart';
 import 'package:intl/intl.dart';
 
 import '../../_bloc_imports.dart';
@@ -11,7 +11,7 @@ class ExpenseDateField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocSelector<AddExpensePageBloc, AddExpensePageState, AddExpensePageState>(
+    return BlocSelector<DashboardPageBloc, DashboardPageState, DashboardPageState>(
         selector: (state) => state,
         builder: (builderContext, data) {
         return InkWell(

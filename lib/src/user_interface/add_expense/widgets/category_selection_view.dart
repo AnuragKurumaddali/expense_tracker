@@ -1,5 +1,5 @@
 import 'package:expense_tracker/src/user_interface/_imports.dart';
-import 'package:expense_tracker/src/user_interface/add_expense/add_expense_page_bloc.dart';
+import 'package:expense_tracker/src/user_interface/dashboard/dashboard_page_bloc.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import '../../_bloc_imports.dart';
 import '../../_core/design_system/layouts/_imports.dart';
@@ -12,8 +12,8 @@ class CategorySelectionView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocSelector<AddExpensePageBloc, AddExpensePageState,
-        AddExpensePageState>(
+    return BlocSelector<DashboardPageBloc, DashboardPageState,
+        DashboardPageState>(
       selector: (state) => state,
       builder: (builderContext, data) {
         return SizedBox(

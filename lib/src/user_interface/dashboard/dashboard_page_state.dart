@@ -1,3 +1,4 @@
+import '../../features/expenses/entities/expense_data.dart';
 import '../_state_imports.dart';
 import '../../features/expenses/entities/expense.dart';
 
@@ -11,14 +12,30 @@ class DashboardPageState with _$DashboardPageState implements UiState {
     StateId? stateId,
     required HandledException error,
     required List<Expense> lsExpenses,
+    required ExpenseData expenseData,
+    required String validationMessage,
+    required String selectedCategory,
+    required DateTime selectedDate,
+    required List<String> lsCategories,
+    required bool isFormValid,
     required Task<void> pageLoadTask,
+    required Task<void> addExpenseTask,
+    required Task<void> getCategoriesTask,
   }) = _DashboardPageState;
 
   factory DashboardPageState.initial() {
-    return const DashboardPageState(
-      error: EmptyException(),
+    return DashboardPageState(
+      error: const EmptyException(),
       lsExpenses: [],
-      pageLoadTask: Task.idle(),
+      expenseData: ExpenseData.empty(),
+      lsCategories: ['Food', 'Travel', 'Shopping', 'Entertainment', 'Other'],
+      selectedCategory: "",
+      selectedDate: DateTime.now(),
+      validationMessage: "",
+      isFormValid: false,
+      addExpenseTask: const Task.idle(),
+      getCategoriesTask: const Task.idle(),
+      pageLoadTask: const Task.idle(),
     );
   }
 
