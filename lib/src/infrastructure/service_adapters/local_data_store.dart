@@ -52,6 +52,7 @@ class LocalDataStore implements LocalDataStoreService {
     return result.map((json) => Expense.fromMap(json)).toList();
   }
 
+  @override
   Future<double> getYearlyTotal(int year) async {
     final result = await _localDataSource.rawQuery('''
       SELECT SUM($columnAmount) 
@@ -68,6 +69,7 @@ class LocalDataStore implements LocalDataStoreService {
     return 0.0;
   }
 
+  @override
   Future<double> getMonthlyTotal(int year, int month) async {
     final result = await _localDataSource.rawQuery('''
       SELECT SUM($columnAmount) 

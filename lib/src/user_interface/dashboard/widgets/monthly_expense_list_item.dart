@@ -12,7 +12,19 @@ class MonthlyExpenseListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ExpansionTile(
-      title: Text('Month ${AppConstants.getMonthName(monthlyExpenses.key)}'),
+      title: Text.rich(
+        TextSpan(
+          children: [
+            TextSpan(
+              text: '${AppConstants.getMonthName(monthlyExpenses.key)} ',
+              style: const TextStyle(fontWeight: FontWeight.bold), // Make this part bold
+            ),
+            const TextSpan(
+              text: 'Month Expenses',
+            ),
+          ],
+        ),
+      ),
       children: monthlyExpenses.value
           .map((expense) => ExpenseListItem(expenseItem: expense))
           .toList(),

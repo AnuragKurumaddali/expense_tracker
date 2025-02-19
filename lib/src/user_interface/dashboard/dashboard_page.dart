@@ -34,7 +34,7 @@ class DashboardPage extends StatelessWidget {
               : ColoredBox(
             color: Colors.white,
             child: DefaultTabController(
-              length: 3, // Adjusted the number of tabs
+              length: 3,
               child: Column(
                 children: [
                   Padding(
@@ -102,7 +102,7 @@ class DashboardPage extends StatelessWidget {
       context: context,
       builder: (BuildContext contex) {
         return BlocProvider.value(
-          value: BlocProvider.of<DashboardPageBloc>(context), // Pass the existing bloc to the dialog
+          value: BlocProvider.of<DashboardPageBloc>(context),
           child: Builder(
             builder: (context) => const AddExpenseDialog(),
           ),

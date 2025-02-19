@@ -88,6 +88,24 @@ class ShrineTextStyles extends TextStyles {
   );
 
   @override
+  final titleMediumBoldSmall = TextStyle(
+    fontFamily: ShrineFonts.primary,
+    fontSize: 14,
+    fontWeight: FontWeight.bold,
+    height: 1.17,
+    color: Particles.colors.text,
+  );
+
+  @override
+  final titleMediumBold = TextStyle(
+    fontFamily: ShrineFonts.primary,
+    fontSize: 16,
+    fontWeight: FontWeight.bold,
+    height: 1.17,
+    color: Particles.colors.text,
+  );
+
+  @override
   final subtitleMedium = TextStyle(
     fontFamily: ShrineFonts.primary,
     fontSize: 16,

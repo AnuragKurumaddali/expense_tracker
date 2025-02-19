@@ -2,18 +2,18 @@ import 'expense.dart';
 import 'package:framework/domain.dart';
 
 class ExpenseData extends ValueObject {
-  double _amount;
+  String _amount;
   String _category;
   DateTime _date;
   String _description;
 
-  double get amount => _amount;
+  String get amount => _amount;
   String get category => _category;
   DateTime get date => _date;
   String get description => _description;
 
   ExpenseData({
-    required double amount,
+    required String amount,
     required String category,
     required DateTime date,
     required String description,
@@ -24,13 +24,13 @@ class ExpenseData extends ValueObject {
 
   ExpenseData.empty()
       : this(
-    amount: 0.0,
+    amount: '',
     category: '',
     date: DateTime(2000), // Default empty date
     description: '',
   );
 
-  ExpenseData updateAmount(double amount) {
+  ExpenseData updateAmount(String amount) {
     _amount = amount;
     return this;
   }
@@ -50,10 +50,9 @@ class ExpenseData extends ValueObject {
     return this;
   }
 
-  // Method to create an Expense instance from ExpenseData
   Expense toExpense() {
     return Expense(
-      amount: amount,
+      amount: double.tryParse(amount)??0.0,
       category: category,
       date: date,
       description: description,

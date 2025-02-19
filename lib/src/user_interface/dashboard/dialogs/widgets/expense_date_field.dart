@@ -1,13 +1,12 @@
 import 'package:expense_tracker/src/user_interface/dashboard/dashboard_page_bloc.dart';
 import 'package:intl/intl.dart';
 
-import '../../_bloc_imports.dart';
-import '../../_core/design_system/layouts/_imports.dart';
+import '../../../_bloc_imports.dart';
+import '../../../_core/design_system/layouts/_imports.dart';
 
 class ExpenseDateField extends StatelessWidget {
-  final TextEditingController categoryController;
 
-  const ExpenseDateField({super.key, required this.categoryController});
+  const ExpenseDateField({super.key});
 
   @override
   Widget build(BuildContext context) {
