@@ -42,14 +42,14 @@ class PlanarButton extends StatelessWidget {
             disabled: disabled,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: disabled ? Colors.white : color,
-                foregroundColor: Colors.white,
+                backgroundColor: disabled ? Colors.grey : color,
+                foregroundColor: Colors.grey.shade300,
                 minimumSize: Size(width ?? 200, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: Particles.borderRadiusCircular.small,
                 ),
               ),
-              onPressed: disabled ? null : onPressed,
+              onPressed: onPressed,
               child: Text(
                 label,
                 textAlign: TextAlign.center,

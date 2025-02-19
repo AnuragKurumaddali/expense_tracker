@@ -23,7 +23,7 @@ class ExpenseListItem extends StatelessWidget {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: Particles.paddings.regular,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -34,22 +34,22 @@ class ExpenseListItem extends StatelessWidget {
                     Particles.horizontalSpaces.extraSmall,
                     Text(
                       expenseItem.amount.toString(),
-                      style: Particles.textStyles.titleLargeSemiBold,
+                      style: Particles.textStyles.titleMediumBold,
                     ),
                   ],
                 ),
-                const SizedBox(height: 8),
+                Particles.verticalSpaces.extraSmall,
                 Row(
                   children: [
                     const Icon(Icons.category, color: Colors.blue, size: 18),
                     Particles.horizontalSpaces.extraSmall,
                     Text(
                       expenseItem.category,
-                      style: Particles.textStyles.titleLargeBold,
+                      style: Particles.textStyles.titleMediumBold,
                     ),
                   ],
                 ),
-                const SizedBox(height: 8),
+                Particles.verticalSpaces.extraSmall,
                 Row(
                   children: [
                     const Icon(Icons.calendar_today,
@@ -57,11 +57,11 @@ class ExpenseListItem extends StatelessWidget {
                     Particles.horizontalSpaces.extraSmall,
                     Text(
                       data.getModifiedDate(expenseItem.date),
-                      style: Particles.textStyles.titleLargeBold,
+                      style: Particles.textStyles.titleMediumBold,
                     ),
                   ],
                 ),
-                const SizedBox(height: 8),
+                Particles.verticalSpaces.extraSmall,
                 Row(
                   children: [
                     const Icon(Icons.description,
@@ -70,7 +70,7 @@ class ExpenseListItem extends StatelessWidget {
                     Expanded(
                       child: Text(
                         expenseItem.description,
-                        style: Particles.textStyles.titleLargeBold,
+                        style: Particles.textStyles.titleMediumBoldSmall,
                         softWrap: true,
                       ),
                     ),

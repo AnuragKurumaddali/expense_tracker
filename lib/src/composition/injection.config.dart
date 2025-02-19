@@ -60,7 +60,6 @@ import '../user_interface/_core/design_system/particles/typography/_imports.dart
     as _i812;
 import '../user_interface/_core/design_system/particles/typography/shrine/shrine_typography.dart'
     as _i601;
-import '../user_interface/add_expense/add_expense_page_bloc.dart' as _i135;
 import '../user_interface/dashboard/dashboard_page_bloc.dart' as _i795;
 
 extension GetItInjectableX on _i174.GetIt {
@@ -108,10 +107,6 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i914.AddExpenseModuleUseCaseFactory>(() =>
         _i914.AddExpenseModuleUseCaseFactory(
             gh<_i334.AddExpenseModuleCommandFactory>()));
-    gh.factory<_i135.AddExpensePageBloc>(() => _i135.AddExpensePageBloc(
-          gh<_i914.AddExpenseModuleUseCaseFactory>(),
-          gh<_i541.UseCaseEngine>(),
-        ));
     gh.factory<_i795.DashboardPageBloc>(() => _i795.DashboardPageBloc(
           gh<_i914.AddExpenseModuleUseCaseFactory>(),
           gh<_i541.UseCaseEngine>(),

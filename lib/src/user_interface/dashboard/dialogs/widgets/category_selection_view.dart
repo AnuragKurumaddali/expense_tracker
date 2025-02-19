@@ -1,9 +1,9 @@
 import 'package:expense_tracker/src/user_interface/_imports.dart';
 import 'package:expense_tracker/src/user_interface/dashboard/dashboard_page_bloc.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-import '../../_bloc_imports.dart';
-import '../../_core/design_system/layouts/_imports.dart';
-import '../../_core/design_system/widgets/buttons/drop_down_button.dart';
+
+import '../../../_core/design_system/layouts/_imports.dart';
+import '../../../_core/design_system/widgets/buttons/drop_down_button.dart';
 
 class CategorySelectionView extends StatelessWidget {
   const CategorySelectionView({
@@ -27,7 +27,7 @@ class CategorySelectionView extends StatelessWidget {
                   backgroundColor: Colors.white,
                   builder: (con) {
                     return SizedBox(
-                      height: 280, // Constrained height for the modal
+                      height: 280,
                       child: Column(
                         children: [
                           Particles.verticalSpaces.regular,
@@ -39,32 +39,35 @@ class CategorySelectionView extends StatelessWidget {
                             ),
                           ),
                           Expanded(
-                            child: ListView.builder(
-                              itemCount: data.lsCategories.length,
-                              itemBuilder: (innerContext, i) {
-                                final category = data.lsCategories.elementAt(i);
-                                bool isSelected =
-                                    data.selectedCategory == category;
-                                return ListTile(
-                                  title: Text(
-                                    category,
-                                    style: Particles.textStyles.titleMedium
-                                        .copyWith(
-                                      fontFamily: 'Horas',
-                                      color: isSelected
-                                          ? Colors.blue
-                                          : Colors.black.withAlpha(700),
+                            child: Scrollbar(
+                              child: ListView.builder(
+                                itemCount: data.lsCategories.length,
+                                itemBuilder: (innerContext, i) {
+                                  final category = data.lsCategories.elementAt(i);
+                                  bool isSelected =
+                                      data.selectedCategory == category;
+                                  return ListTile(
+                                    title: Text(
+                                      category,
+                                      style: Particles.textStyles.titleMedium
+                                          .copyWith(
+                                        fontFamily: 'Horas',
+                                        color: isSelected
+                                            ? Colors.blue
+                                            : Colors.black.withAlpha(700),
+                                      ),
                                     ),
-                                  ),
-                                  onTap: () {
-                                    context.pop();
-                                    Events.updateCategory(category)
-                                        .publish(context);
-                                  },
-                                );
-                              },
+                                    onTap: () {
+                                      context.pop();
+                                      Events.updateCategory(category)
+                                          .publish(context);
+                                    },
+                                  );
+                                },
+                              ),
                             ),
                           ),
+                          
                         ],
                       ),
                     );

@@ -49,7 +49,7 @@ class DashboardPageBloc extends UseCaseBloc<DashboardPageEvent, DashboardPageSta
     );
 
     on<ValidateExpenseFields>((event, emit) {
-      if (state.expenseData.amount <= 0) {
+      if (state.expenseData.amount.isEmpty || (double.tryParse(state.expenseData.amount)??0.0) <= 0) {
         emit(state.copyWith(
           validationMessage: "Please enter the amount greater than zero",
           isFormValid: false,
@@ -163,7 +163,11 @@ class DashboardPageBloc extends UseCaseBloc<DashboardPageEvent, DashboardPageSta
                 currentMonthExpenses: currentMonthExp,
                 monthlyGroupedExpenses: mapOfMonthlyExpenses,
                 yearlyGroupedExpenses: mapOfYearlyExpenses,
-                expenseData: ExpenseData.empty()
+                expenseData: ExpenseData.empty(),
+                selectedCategory: "",
+                selectedDate: DateTime.now(),
+                isFormValid: false,
+                validationMessage: ""
             );
           },
           orElse: () => state,

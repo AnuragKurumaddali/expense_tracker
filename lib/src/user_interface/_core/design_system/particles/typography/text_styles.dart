@@ -14,6 +14,8 @@ abstract class TextStyles {
 
   TextStyle get titleLarge;
   TextStyle get titleMedium;
+  TextStyle get titleMediumBoldSmall;
+  TextStyle get titleMediumBold;
 
   TextStyle get titleSmall;
 

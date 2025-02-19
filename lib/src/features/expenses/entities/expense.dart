@@ -25,7 +25,7 @@ class Expense {
       amount: map['amount'],
       category: map['category'],
       date: DateTime.parse(map['date']),
-      description: map['description'],
+      description: map['description'].toString().trim(),
     );
   }
 }

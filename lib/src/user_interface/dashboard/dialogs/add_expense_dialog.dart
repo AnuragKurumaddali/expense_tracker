@@ -4,11 +4,11 @@ import 'package:expense_tracker/src/user_interface/dashboard/dashboard_page_bloc
 
 import '../../_core/design_system/layouts/_imports.dart';
 import '../../_core/design_system/widgets/snackbar/custom_snackbar.dart';
-import '../../add_expense/widgets/add_expense_button.dart';
-import '../../add_expense/widgets/category_selection_view.dart';
-import '../../add_expense/widgets/expense_amount_field.dart';
-import '../../add_expense/widgets/expense_date_field.dart';
-import '../../add_expense/widgets/expense_description_field.dart';
+import 'widgets/add_expense_button.dart';
+import 'widgets/category_selection_view.dart';
+import 'widgets/expense_amount_field.dart';
+import 'widgets/expense_date_field.dart';
+import 'widgets/expense_description_field.dart';
 
 class AddExpenseDialog extends StatefulWidget {
   const AddExpenseDialog({super.key});
@@ -21,22 +21,18 @@ class _AddExpenseDialogState extends State<AddExpenseDialog> {
 
   late TextEditingController titleController;
   late TextEditingController descriptionController;
-  late TextEditingController categoryTextController;
 
   @override
   void initState() {
     super.initState();
     titleController = TextEditingController();
     descriptionController = TextEditingController();
-    categoryTextController = TextEditingController();
   }
 
   @override
   void dispose() {
-    // Dispose controllers when widget is disposed
     titleController.dispose();
     descriptionController.dispose();
-    categoryTextController.dispose();
     super.dispose();
   }
 
@@ -54,11 +50,10 @@ class _AddExpenseDialogState extends State<AddExpenseDialog> {
       },
       builder: (context, data) {
         titleController.text = data.expenseData.amount.toString();
-        categoryTextController.text = data.expenseData.category;
         descriptionController.text = data.expenseData.description;
         return Dialog(
           child: ConstrainedBox(
-            constraints: const BoxConstraints(maxHeight: 500, maxWidth: 400),
+            constraints: const BoxConstraints(maxHeight: 462, maxWidth: 400),
             child: BasicPage(
               padding: Particles.paddings.nano,
               showBackNav: true,
@@ -70,22 +65,24 @@ class _AddExpenseDialogState extends State<AddExpenseDialog> {
                       color: Colors.white,
                       child: Padding(
                         padding: Particles.paddings.regular,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Particles.verticalSpaces.regular,
-                            ExpenseAmountField(amountController: titleController),
-                            Particles.verticalSpaces.regular,
-                            const CategorySelectionView(),
-                            Particles.verticalSpaces.regular,
-                            ExpenseDateField(
-                                categoryController: categoryTextController),
-                            Particles.verticalSpaces.regular,
-                            ExpenseDescriptionField(
-                                descriptionController: descriptionController),
-                            Particles.verticalSpaces.regular,
-                            AddExpenseButton(isFormValid: data.isFormValid),
-                          ],
+                        child: SingleChildScrollView(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              ExpenseAmountField(
+                                  amountController: titleController),
+                              Particles.verticalSpaces.regular,
+                              const CategorySelectionView(),
+                              Particles.verticalSpaces.regular,
+                              const ExpenseDateField(),
+                              Particles.verticalSpaces.regular,
+                              ExpenseDescriptionField(
+                                  descriptionController: descriptionController),
+                              Particles.verticalSpaces.regular,
+                              AddExpenseButton(isFormValid: data.isFormValid,
+                                validationMessage: data.validationMessage,),
+                            ],
+                          ),
                         ),
                       ),
                     ),
