@@ -14,6 +14,7 @@ class DashboardPageEvent with _$DashboardPageEvent implements UiEvent {
   const factory DashboardPageEvent.updateDescription(String description) = UpdateDescription;
   const factory DashboardPageEvent.updateDateTime(DateTime dateTime) = UpdateDateTime;
   const factory DashboardPageEvent.validateExpenseFields() = ValidateExpenseFields;
+  const factory DashboardPageEvent.resetTasks(String taskName) = ResetTasks;
 }
 
 typedef Events = DashboardPageEvent;

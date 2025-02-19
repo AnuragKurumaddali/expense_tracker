@@ -1,4 +1,5 @@
 import 'package:framework/framework.dart';
+import '../entities/expense.dart';
 import '../entities/expense_data.dart';
 import 'add_expense_command.dart';
 import 'add_expense_exception.dart';
@@ -9,8 +10,9 @@ class AddExpenseRequest implements UseCaseRequest{
 }
 
 class AddExpenseResponse{
+  final Expense expense;
   final AddExpenseRequest addExpenseRequest;
-  const AddExpenseResponse(this.addExpenseRequest);
+  const AddExpenseResponse(this.addExpenseRequest, this.expense);
 }
 
 class AddExpense extends StreamUseCase<AddExpenseRequest,Task<AddExpenseResponse>>{
@@ -27,7 +29,7 @@ class AddExpense extends StreamUseCase<AddExpenseRequest,Task<AddExpenseResponse
     try{
       final expense = request.expenseData.toExpense();
       await factory.addExpense(expense).execute();
-      yield Task.done(AddExpenseResponse(request));
+      yield Task.done(AddExpenseResponse(request, expense));
     }catch(error){
       Task.failedFrom(error, const DefaultAddExpenseException());
     }

@@ -26,6 +26,7 @@ mixin _$DashboardPageEvent {
     required TResult Function(String description) updateDescription,
     required TResult Function(DateTime dateTime) updateDateTime,
     required TResult Function() validateExpenseFields,
+    required TResult Function(String taskName) resetTasks,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +39,7 @@ mixin _$DashboardPageEvent {
     TResult? Function(String description)? updateDescription,
     TResult? Function(DateTime dateTime)? updateDateTime,
     TResult? Function()? validateExpenseFields,
+    TResult? Function(String taskName)? resetTasks,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +52,7 @@ mixin _$DashboardPageEvent {
     TResult Function(String description)? updateDescription,
     TResult Function(DateTime dateTime)? updateDateTime,
     TResult Function()? validateExpenseFields,
+    TResult Function(String taskName)? resetTasks,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -64,6 +67,7 @@ mixin _$DashboardPageEvent {
     required TResult Function(UpdateDateTime value) updateDateTime,
     required TResult Function(ValidateExpenseFields value)
         validateExpenseFields,
+    required TResult Function(ResetTasks value) resetTasks,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -76,6 +80,7 @@ mixin _$DashboardPageEvent {
     TResult? Function(UpdateDescription value)? updateDescription,
     TResult? Function(UpdateDateTime value)? updateDateTime,
     TResult? Function(ValidateExpenseFields value)? validateExpenseFields,
+    TResult? Function(ResetTasks value)? resetTasks,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -88,6 +93,7 @@ mixin _$DashboardPageEvent {
     TResult Function(UpdateDescription value)? updateDescription,
     TResult Function(UpdateDateTime value)? updateDateTime,
     TResult Function(ValidateExpenseFields value)? validateExpenseFields,
+    TResult Function(ResetTasks value)? resetTasks,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -123,6 +129,7 @@ class _$OnPageLoadedImpl implements OnPageLoaded {
     required TResult Function(String description) updateDescription,
     required TResult Function(DateTime dateTime) updateDateTime,
     required TResult Function() validateExpenseFields,
+    required TResult Function(String taskName) resetTasks,
   }) {
     return onPageLoaded();
   }
@@ -138,6 +145,7 @@ class _$OnPageLoadedImpl implements OnPageLoaded {
     TResult? Function(String description)? updateDescription,
     TResult? Function(DateTime dateTime)? updateDateTime,
     TResult? Function()? validateExpenseFields,
+    TResult? Function(String taskName)? resetTasks,
   }) {
     return onPageLoaded?.call();
   }
@@ -153,6 +161,7 @@ class _$OnPageLoadedImpl implements OnPageLoaded {
     TResult Function(String description)? updateDescription,
     TResult Function(DateTime dateTime)? updateDateTime,
     TResult Function()? validateExpenseFields,
+    TResult Function(String taskName)? resetTasks,
     required TResult orElse(),
   }) {
     if (onPageLoaded != null) {
@@ -173,6 +182,7 @@ class _$OnPageLoadedImpl implements OnPageLoaded {
     required TResult Function(UpdateDateTime value) updateDateTime,
     required TResult Function(ValidateExpenseFields value)
         validateExpenseFields,
+    required TResult Function(ResetTasks value) resetTasks,
   }) {
     return onPageLoaded(this);
   }
@@ -188,6 +198,7 @@ class _$OnPageLoadedImpl implements OnPageLoaded {
     TResult? Function(UpdateDescription value)? updateDescription,
     TResult? Function(UpdateDateTime value)? updateDateTime,
     TResult? Function(ValidateExpenseFields value)? validateExpenseFields,
+    TResult? Function(ResetTasks value)? resetTasks,
   }) {
     return onPageLoaded?.call(this);
   }
@@ -203,6 +214,7 @@ class _$OnPageLoadedImpl implements OnPageLoaded {
     TResult Function(UpdateDescription value)? updateDescription,
     TResult Function(UpdateDateTime value)? updateDateTime,
     TResult Function(ValidateExpenseFields value)? validateExpenseFields,
+    TResult Function(ResetTasks value)? resetTasks,
     required TResult orElse(),
   }) {
     if (onPageLoaded != null) {
@@ -246,6 +258,7 @@ class _$SaveExpenseEventImpl implements SaveExpenseEvent {
     required TResult Function(String description) updateDescription,
     required TResult Function(DateTime dateTime) updateDateTime,
     required TResult Function() validateExpenseFields,
+    required TResult Function(String taskName) resetTasks,
   }) {
     return addExpense();
   }
@@ -261,6 +274,7 @@ class _$SaveExpenseEventImpl implements SaveExpenseEvent {
     TResult? Function(String description)? updateDescription,
     TResult? Function(DateTime dateTime)? updateDateTime,
     TResult? Function()? validateExpenseFields,
+    TResult? Function(String taskName)? resetTasks,
   }) {
     return addExpense?.call();
   }
@@ -276,6 +290,7 @@ class _$SaveExpenseEventImpl implements SaveExpenseEvent {
     TResult Function(String description)? updateDescription,
     TResult Function(DateTime dateTime)? updateDateTime,
     TResult Function()? validateExpenseFields,
+    TResult Function(String taskName)? resetTasks,
     required TResult orElse(),
   }) {
     if (addExpense != null) {
@@ -296,6 +311,7 @@ class _$SaveExpenseEventImpl implements SaveExpenseEvent {
     required TResult Function(UpdateDateTime value) updateDateTime,
     required TResult Function(ValidateExpenseFields value)
         validateExpenseFields,
+    required TResult Function(ResetTasks value) resetTasks,
   }) {
     return addExpense(this);
   }
@@ -311,6 +327,7 @@ class _$SaveExpenseEventImpl implements SaveExpenseEvent {
     TResult? Function(UpdateDescription value)? updateDescription,
     TResult? Function(UpdateDateTime value)? updateDateTime,
     TResult? Function(ValidateExpenseFields value)? validateExpenseFields,
+    TResult? Function(ResetTasks value)? resetTasks,
   }) {
     return addExpense?.call(this);
   }
@@ -326,6 +343,7 @@ class _$SaveExpenseEventImpl implements SaveExpenseEvent {
     TResult Function(UpdateDescription value)? updateDescription,
     TResult Function(UpdateDateTime value)? updateDateTime,
     TResult Function(ValidateExpenseFields value)? validateExpenseFields,
+    TResult Function(ResetTasks value)? resetTasks,
     required TResult orElse(),
   }) {
     if (addExpense != null) {
@@ -369,6 +387,7 @@ class _$GetAllCategoriesImpl implements GetAllCategories {
     required TResult Function(String description) updateDescription,
     required TResult Function(DateTime dateTime) updateDateTime,
     required TResult Function() validateExpenseFields,
+    required TResult Function(String taskName) resetTasks,
   }) {
     return getAllCategories();
   }
@@ -384,6 +403,7 @@ class _$GetAllCategoriesImpl implements GetAllCategories {
     TResult? Function(String description)? updateDescription,
     TResult? Function(DateTime dateTime)? updateDateTime,
     TResult? Function()? validateExpenseFields,
+    TResult? Function(String taskName)? resetTasks,
   }) {
     return getAllCategories?.call();
   }
@@ -399,6 +419,7 @@ class _$GetAllCategoriesImpl implements GetAllCategories {
     TResult Function(String description)? updateDescription,
     TResult Function(DateTime dateTime)? updateDateTime,
     TResult Function()? validateExpenseFields,
+    TResult Function(String taskName)? resetTasks,
     required TResult orElse(),
   }) {
     if (getAllCategories != null) {
@@ -419,6 +440,7 @@ class _$GetAllCategoriesImpl implements GetAllCategories {
     required TResult Function(UpdateDateTime value) updateDateTime,
     required TResult Function(ValidateExpenseFields value)
         validateExpenseFields,
+    required TResult Function(ResetTasks value) resetTasks,
   }) {
     return getAllCategories(this);
   }
@@ -434,6 +456,7 @@ class _$GetAllCategoriesImpl implements GetAllCategories {
     TResult? Function(UpdateDescription value)? updateDescription,
     TResult? Function(UpdateDateTime value)? updateDateTime,
     TResult? Function(ValidateExpenseFields value)? validateExpenseFields,
+    TResult? Function(ResetTasks value)? resetTasks,
   }) {
     return getAllCategories?.call(this);
   }
@@ -449,6 +472,7 @@ class _$GetAllCategoriesImpl implements GetAllCategories {
     TResult Function(UpdateDescription value)? updateDescription,
     TResult Function(UpdateDateTime value)? updateDateTime,
     TResult Function(ValidateExpenseFields value)? validateExpenseFields,
+    TResult Function(ResetTasks value)? resetTasks,
     required TResult orElse(),
   }) {
     if (getAllCategories != null) {
@@ -497,6 +521,7 @@ class _$UpdateAmountImpl implements UpdateAmount {
     required TResult Function(String description) updateDescription,
     required TResult Function(DateTime dateTime) updateDateTime,
     required TResult Function() validateExpenseFields,
+    required TResult Function(String taskName) resetTasks,
   }) {
     return updateAmount(amount);
   }
@@ -512,6 +537,7 @@ class _$UpdateAmountImpl implements UpdateAmount {
     TResult? Function(String description)? updateDescription,
     TResult? Function(DateTime dateTime)? updateDateTime,
     TResult? Function()? validateExpenseFields,
+    TResult? Function(String taskName)? resetTasks,
   }) {
     return updateAmount?.call(amount);
   }
@@ -527,6 +553,7 @@ class _$UpdateAmountImpl implements UpdateAmount {
     TResult Function(String description)? updateDescription,
     TResult Function(DateTime dateTime)? updateDateTime,
     TResult Function()? validateExpenseFields,
+    TResult Function(String taskName)? resetTasks,
     required TResult orElse(),
   }) {
     if (updateAmount != null) {
@@ -547,6 +574,7 @@ class _$UpdateAmountImpl implements UpdateAmount {
     required TResult Function(UpdateDateTime value) updateDateTime,
     required TResult Function(ValidateExpenseFields value)
         validateExpenseFields,
+    required TResult Function(ResetTasks value) resetTasks,
   }) {
     return updateAmount(this);
   }
@@ -562,6 +590,7 @@ class _$UpdateAmountImpl implements UpdateAmount {
     TResult? Function(UpdateDescription value)? updateDescription,
     TResult? Function(UpdateDateTime value)? updateDateTime,
     TResult? Function(ValidateExpenseFields value)? validateExpenseFields,
+    TResult? Function(ResetTasks value)? resetTasks,
   }) {
     return updateAmount?.call(this);
   }
@@ -577,6 +606,7 @@ class _$UpdateAmountImpl implements UpdateAmount {
     TResult Function(UpdateDescription value)? updateDescription,
     TResult Function(UpdateDateTime value)? updateDateTime,
     TResult Function(ValidateExpenseFields value)? validateExpenseFields,
+    TResult Function(ResetTasks value)? resetTasks,
     required TResult orElse(),
   }) {
     if (updateAmount != null) {
@@ -628,6 +658,7 @@ class _$UpdateCategoryImpl implements UpdateCategory {
     required TResult Function(String description) updateDescription,
     required TResult Function(DateTime dateTime) updateDateTime,
     required TResult Function() validateExpenseFields,
+    required TResult Function(String taskName) resetTasks,
   }) {
     return updateCategory(category);
   }
@@ -643,6 +674,7 @@ class _$UpdateCategoryImpl implements UpdateCategory {
     TResult? Function(String description)? updateDescription,
     TResult? Function(DateTime dateTime)? updateDateTime,
     TResult? Function()? validateExpenseFields,
+    TResult? Function(String taskName)? resetTasks,
   }) {
     return updateCategory?.call(category);
   }
@@ -658,6 +690,7 @@ class _$UpdateCategoryImpl implements UpdateCategory {
     TResult Function(String description)? updateDescription,
     TResult Function(DateTime dateTime)? updateDateTime,
     TResult Function()? validateExpenseFields,
+    TResult Function(String taskName)? resetTasks,
     required TResult orElse(),
   }) {
     if (updateCategory != null) {
@@ -678,6 +711,7 @@ class _$UpdateCategoryImpl implements UpdateCategory {
     required TResult Function(UpdateDateTime value) updateDateTime,
     required TResult Function(ValidateExpenseFields value)
         validateExpenseFields,
+    required TResult Function(ResetTasks value) resetTasks,
   }) {
     return updateCategory(this);
   }
@@ -693,6 +727,7 @@ class _$UpdateCategoryImpl implements UpdateCategory {
     TResult? Function(UpdateDescription value)? updateDescription,
     TResult? Function(UpdateDateTime value)? updateDateTime,
     TResult? Function(ValidateExpenseFields value)? validateExpenseFields,
+    TResult? Function(ResetTasks value)? resetTasks,
   }) {
     return updateCategory?.call(this);
   }
@@ -708,6 +743,7 @@ class _$UpdateCategoryImpl implements UpdateCategory {
     TResult Function(UpdateDescription value)? updateDescription,
     TResult Function(UpdateDateTime value)? updateDateTime,
     TResult Function(ValidateExpenseFields value)? validateExpenseFields,
+    TResult Function(ResetTasks value)? resetTasks,
     required TResult orElse(),
   }) {
     if (updateCategory != null) {
@@ -759,6 +795,7 @@ class _$UpdateDescriptionImpl implements UpdateDescription {
     required TResult Function(String description) updateDescription,
     required TResult Function(DateTime dateTime) updateDateTime,
     required TResult Function() validateExpenseFields,
+    required TResult Function(String taskName) resetTasks,
   }) {
     return updateDescription(description);
   }
@@ -774,6 +811,7 @@ class _$UpdateDescriptionImpl implements UpdateDescription {
     TResult? Function(String description)? updateDescription,
     TResult? Function(DateTime dateTime)? updateDateTime,
     TResult? Function()? validateExpenseFields,
+    TResult? Function(String taskName)? resetTasks,
   }) {
     return updateDescription?.call(description);
   }
@@ -789,6 +827,7 @@ class _$UpdateDescriptionImpl implements UpdateDescription {
     TResult Function(String description)? updateDescription,
     TResult Function(DateTime dateTime)? updateDateTime,
     TResult Function()? validateExpenseFields,
+    TResult Function(String taskName)? resetTasks,
     required TResult orElse(),
   }) {
     if (updateDescription != null) {
@@ -809,6 +848,7 @@ class _$UpdateDescriptionImpl implements UpdateDescription {
     required TResult Function(UpdateDateTime value) updateDateTime,
     required TResult Function(ValidateExpenseFields value)
         validateExpenseFields,
+    required TResult Function(ResetTasks value) resetTasks,
   }) {
     return updateDescription(this);
   }
@@ -824,6 +864,7 @@ class _$UpdateDescriptionImpl implements UpdateDescription {
     TResult? Function(UpdateDescription value)? updateDescription,
     TResult? Function(UpdateDateTime value)? updateDateTime,
     TResult? Function(ValidateExpenseFields value)? validateExpenseFields,
+    TResult? Function(ResetTasks value)? resetTasks,
   }) {
     return updateDescription?.call(this);
   }
@@ -839,6 +880,7 @@ class _$UpdateDescriptionImpl implements UpdateDescription {
     TResult Function(UpdateDescription value)? updateDescription,
     TResult Function(UpdateDateTime value)? updateDateTime,
     TResult Function(ValidateExpenseFields value)? validateExpenseFields,
+    TResult Function(ResetTasks value)? resetTasks,
     required TResult orElse(),
   }) {
     if (updateDescription != null) {
@@ -891,6 +933,7 @@ class _$UpdateDateTimeImpl implements UpdateDateTime {
     required TResult Function(String description) updateDescription,
     required TResult Function(DateTime dateTime) updateDateTime,
     required TResult Function() validateExpenseFields,
+    required TResult Function(String taskName) resetTasks,
   }) {
     return updateDateTime(dateTime);
   }
@@ -906,6 +949,7 @@ class _$UpdateDateTimeImpl implements UpdateDateTime {
     TResult? Function(String description)? updateDescription,
     TResult? Function(DateTime dateTime)? updateDateTime,
     TResult? Function()? validateExpenseFields,
+    TResult? Function(String taskName)? resetTasks,
   }) {
     return updateDateTime?.call(dateTime);
   }
@@ -921,6 +965,7 @@ class _$UpdateDateTimeImpl implements UpdateDateTime {
     TResult Function(String description)? updateDescription,
     TResult Function(DateTime dateTime)? updateDateTime,
     TResult Function()? validateExpenseFields,
+    TResult Function(String taskName)? resetTasks,
     required TResult orElse(),
   }) {
     if (updateDateTime != null) {
@@ -941,6 +986,7 @@ class _$UpdateDateTimeImpl implements UpdateDateTime {
     required TResult Function(UpdateDateTime value) updateDateTime,
     required TResult Function(ValidateExpenseFields value)
         validateExpenseFields,
+    required TResult Function(ResetTasks value) resetTasks,
   }) {
     return updateDateTime(this);
   }
@@ -956,6 +1002,7 @@ class _$UpdateDateTimeImpl implements UpdateDateTime {
     TResult? Function(UpdateDescription value)? updateDescription,
     TResult? Function(UpdateDateTime value)? updateDateTime,
     TResult? Function(ValidateExpenseFields value)? validateExpenseFields,
+    TResult? Function(ResetTasks value)? resetTasks,
   }) {
     return updateDateTime?.call(this);
   }
@@ -971,6 +1018,7 @@ class _$UpdateDateTimeImpl implements UpdateDateTime {
     TResult Function(UpdateDescription value)? updateDescription,
     TResult Function(UpdateDateTime value)? updateDateTime,
     TResult Function(ValidateExpenseFields value)? validateExpenseFields,
+    TResult Function(ResetTasks value)? resetTasks,
     required TResult orElse(),
   }) {
     if (updateDateTime != null) {
@@ -1017,6 +1065,7 @@ class _$ValidateExpenseFieldsImpl implements ValidateExpenseFields {
     required TResult Function(String description) updateDescription,
     required TResult Function(DateTime dateTime) updateDateTime,
     required TResult Function() validateExpenseFields,
+    required TResult Function(String taskName) resetTasks,
   }) {
     return validateExpenseFields();
   }
@@ -1032,6 +1081,7 @@ class _$ValidateExpenseFieldsImpl implements ValidateExpenseFields {
     TResult? Function(String description)? updateDescription,
     TResult? Function(DateTime dateTime)? updateDateTime,
     TResult? Function()? validateExpenseFields,
+    TResult? Function(String taskName)? resetTasks,
   }) {
     return validateExpenseFields?.call();
   }
@@ -1047,6 +1097,7 @@ class _$ValidateExpenseFieldsImpl implements ValidateExpenseFields {
     TResult Function(String description)? updateDescription,
     TResult Function(DateTime dateTime)? updateDateTime,
     TResult Function()? validateExpenseFields,
+    TResult Function(String taskName)? resetTasks,
     required TResult orElse(),
   }) {
     if (validateExpenseFields != null) {
@@ -1067,6 +1118,7 @@ class _$ValidateExpenseFieldsImpl implements ValidateExpenseFields {
     required TResult Function(UpdateDateTime value) updateDateTime,
     required TResult Function(ValidateExpenseFields value)
         validateExpenseFields,
+    required TResult Function(ResetTasks value) resetTasks,
   }) {
     return validateExpenseFields(this);
   }
@@ -1082,6 +1134,7 @@ class _$ValidateExpenseFieldsImpl implements ValidateExpenseFields {
     TResult? Function(UpdateDescription value)? updateDescription,
     TResult? Function(UpdateDateTime value)? updateDateTime,
     TResult? Function(ValidateExpenseFields value)? validateExpenseFields,
+    TResult? Function(ResetTasks value)? resetTasks,
   }) {
     return validateExpenseFields?.call(this);
   }
@@ -1097,6 +1150,7 @@ class _$ValidateExpenseFieldsImpl implements ValidateExpenseFields {
     TResult Function(UpdateDescription value)? updateDescription,
     TResult Function(UpdateDateTime value)? updateDateTime,
     TResult Function(ValidateExpenseFields value)? validateExpenseFields,
+    TResult Function(ResetTasks value)? resetTasks,
     required TResult orElse(),
   }) {
     if (validateExpenseFields != null) {
@@ -1108,4 +1162,141 @@ class _$ValidateExpenseFieldsImpl implements ValidateExpenseFields {
 
 abstract class ValidateExpenseFields implements DashboardPageEvent {
   const factory ValidateExpenseFields() = _$ValidateExpenseFieldsImpl;
+}
+
+/// @nodoc
+
+class _$ResetTasksImpl implements ResetTasks {
+  const _$ResetTasksImpl(this.taskName);
+
+  @override
+  final String taskName;
+
+  @override
+  String toString() {
+    return 'DashboardPageEvent.resetTasks(taskName: $taskName)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ResetTasksImpl &&
+            (identical(other.taskName, taskName) ||
+                other.taskName == taskName));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, taskName);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() onPageLoaded,
+    required TResult Function() addExpense,
+    required TResult Function() getAllCategories,
+    required TResult Function(String amount) updateAmount,
+    required TResult Function(String category) updateCategory,
+    required TResult Function(String description) updateDescription,
+    required TResult Function(DateTime dateTime) updateDateTime,
+    required TResult Function() validateExpenseFields,
+    required TResult Function(String taskName) resetTasks,
+  }) {
+    return resetTasks(taskName);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? onPageLoaded,
+    TResult? Function()? addExpense,
+    TResult? Function()? getAllCategories,
+    TResult? Function(String amount)? updateAmount,
+    TResult? Function(String category)? updateCategory,
+    TResult? Function(String description)? updateDescription,
+    TResult? Function(DateTime dateTime)? updateDateTime,
+    TResult? Function()? validateExpenseFields,
+    TResult? Function(String taskName)? resetTasks,
+  }) {
+    return resetTasks?.call(taskName);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? onPageLoaded,
+    TResult Function()? addExpense,
+    TResult Function()? getAllCategories,
+    TResult Function(String amount)? updateAmount,
+    TResult Function(String category)? updateCategory,
+    TResult Function(String description)? updateDescription,
+    TResult Function(DateTime dateTime)? updateDateTime,
+    TResult Function()? validateExpenseFields,
+    TResult Function(String taskName)? resetTasks,
+    required TResult orElse(),
+  }) {
+    if (resetTasks != null) {
+      return resetTasks(taskName);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OnPageLoaded value) onPageLoaded,
+    required TResult Function(SaveExpenseEvent value) addExpense,
+    required TResult Function(GetAllCategories value) getAllCategories,
+    required TResult Function(UpdateAmount value) updateAmount,
+    required TResult Function(UpdateCategory value) updateCategory,
+    required TResult Function(UpdateDescription value) updateDescription,
+    required TResult Function(UpdateDateTime value) updateDateTime,
+    required TResult Function(ValidateExpenseFields value)
+        validateExpenseFields,
+    required TResult Function(ResetTasks value) resetTasks,
+  }) {
+    return resetTasks(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OnPageLoaded value)? onPageLoaded,
+    TResult? Function(SaveExpenseEvent value)? addExpense,
+    TResult? Function(GetAllCategories value)? getAllCategories,
+    TResult? Function(UpdateAmount value)? updateAmount,
+    TResult? Function(UpdateCategory value)? updateCategory,
+    TResult? Function(UpdateDescription value)? updateDescription,
+    TResult? Function(UpdateDateTime value)? updateDateTime,
+    TResult? Function(ValidateExpenseFields value)? validateExpenseFields,
+    TResult? Function(ResetTasks value)? resetTasks,
+  }) {
+    return resetTasks?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OnPageLoaded value)? onPageLoaded,
+    TResult Function(SaveExpenseEvent value)? addExpense,
+    TResult Function(GetAllCategories value)? getAllCategories,
+    TResult Function(UpdateAmount value)? updateAmount,
+    TResult Function(UpdateCategory value)? updateCategory,
+    TResult Function(UpdateDescription value)? updateDescription,
+    TResult Function(UpdateDateTime value)? updateDateTime,
+    TResult Function(ValidateExpenseFields value)? validateExpenseFields,
+    TResult Function(ResetTasks value)? resetTasks,
+    required TResult orElse(),
+  }) {
+    if (resetTasks != null) {
+      return resetTasks(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ResetTasks implements DashboardPageEvent {
+  const factory ResetTasks(final String taskName) = _$ResetTasksImpl;
+
+  String get taskName;
 }
