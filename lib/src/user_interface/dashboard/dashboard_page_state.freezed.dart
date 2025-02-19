@@ -25,6 +25,16 @@ mixin _$DashboardPageState {
   DateTime get selectedDate => throw _privateConstructorUsedError;
   List<String> get lsCategories => throw _privateConstructorUsedError;
   bool get isFormValid => throw _privateConstructorUsedError;
+  double get totalAllValue => throw _privateConstructorUsedError;
+  double get totalYearlyValue => throw _privateConstructorUsedError;
+  double get totalMonthlyValue => throw _privateConstructorUsedError;
+  List<Expense> get currentMonthExpenses => throw _privateConstructorUsedError;
+  Map<String, List<Expense>> get groupedExpenses =>
+      throw _privateConstructorUsedError;
+  Map<int, List<Expense>> get monthlyGroupedExpenses =>
+      throw _privateConstructorUsedError; //key integer month
+  Map<int, Map<int, List<Expense>>> get yearlyGroupedExpenses =>
+      throw _privateConstructorUsedError; //key year and month
   Task<void> get pageLoadTask => throw _privateConstructorUsedError;
   Task<void> get addExpenseTask => throw _privateConstructorUsedError;
   Task<void> get getCategoriesTask => throw _privateConstructorUsedError;
@@ -52,6 +62,13 @@ abstract class $DashboardPageStateCopyWith<$Res> {
       DateTime selectedDate,
       List<String> lsCategories,
       bool isFormValid,
+      double totalAllValue,
+      double totalYearlyValue,
+      double totalMonthlyValue,
+      List<Expense> currentMonthExpenses,
+      Map<String, List<Expense>> groupedExpenses,
+      Map<int, List<Expense>> monthlyGroupedExpenses,
+      Map<int, Map<int, List<Expense>>> yearlyGroupedExpenses,
       Task<void> pageLoadTask,
       Task<void> addExpenseTask,
       Task<void> getCategoriesTask});
@@ -85,6 +102,13 @@ class _$DashboardPageStateCopyWithImpl<$Res, $Val extends DashboardPageState>
     Object? selectedDate = null,
     Object? lsCategories = null,
     Object? isFormValid = null,
+    Object? totalAllValue = null,
+    Object? totalYearlyValue = null,
+    Object? totalMonthlyValue = null,
+    Object? currentMonthExpenses = null,
+    Object? groupedExpenses = null,
+    Object? monthlyGroupedExpenses = null,
+    Object? yearlyGroupedExpenses = null,
     Object? pageLoadTask = null,
     Object? addExpenseTask = null,
     Object? getCategoriesTask = null,
@@ -126,6 +150,34 @@ class _$DashboardPageStateCopyWithImpl<$Res, $Val extends DashboardPageState>
           ? _value.isFormValid
           : isFormValid // ignore: cast_nullable_to_non_nullable
               as bool,
+      totalAllValue: null == totalAllValue
+          ? _value.totalAllValue
+          : totalAllValue // ignore: cast_nullable_to_non_nullable
+              as double,
+      totalYearlyValue: null == totalYearlyValue
+          ? _value.totalYearlyValue
+          : totalYearlyValue // ignore: cast_nullable_to_non_nullable
+              as double,
+      totalMonthlyValue: null == totalMonthlyValue
+          ? _value.totalMonthlyValue
+          : totalMonthlyValue // ignore: cast_nullable_to_non_nullable
+              as double,
+      currentMonthExpenses: null == currentMonthExpenses
+          ? _value.currentMonthExpenses
+          : currentMonthExpenses // ignore: cast_nullable_to_non_nullable
+              as List<Expense>,
+      groupedExpenses: null == groupedExpenses
+          ? _value.groupedExpenses
+          : groupedExpenses // ignore: cast_nullable_to_non_nullable
+              as Map<String, List<Expense>>,
+      monthlyGroupedExpenses: null == monthlyGroupedExpenses
+          ? _value.monthlyGroupedExpenses
+          : monthlyGroupedExpenses // ignore: cast_nullable_to_non_nullable
+              as Map<int, List<Expense>>,
+      yearlyGroupedExpenses: null == yearlyGroupedExpenses
+          ? _value.yearlyGroupedExpenses
+          : yearlyGroupedExpenses // ignore: cast_nullable_to_non_nullable
+              as Map<int, Map<int, List<Expense>>>,
       pageLoadTask: null == pageLoadTask
           ? _value.pageLoadTask
           : pageLoadTask // ignore: cast_nullable_to_non_nullable
@@ -190,6 +242,13 @@ abstract class _$$DashboardPageStateImplCopyWith<$Res>
       DateTime selectedDate,
       List<String> lsCategories,
       bool isFormValid,
+      double totalAllValue,
+      double totalYearlyValue,
+      double totalMonthlyValue,
+      List<Expense> currentMonthExpenses,
+      Map<String, List<Expense>> groupedExpenses,
+      Map<int, List<Expense>> monthlyGroupedExpenses,
+      Map<int, Map<int, List<Expense>>> yearlyGroupedExpenses,
       Task<void> pageLoadTask,
       Task<void> addExpenseTask,
       Task<void> getCategoriesTask});
@@ -224,6 +283,13 @@ class __$$DashboardPageStateImplCopyWithImpl<$Res>
     Object? selectedDate = null,
     Object? lsCategories = null,
     Object? isFormValid = null,
+    Object? totalAllValue = null,
+    Object? totalYearlyValue = null,
+    Object? totalMonthlyValue = null,
+    Object? currentMonthExpenses = null,
+    Object? groupedExpenses = null,
+    Object? monthlyGroupedExpenses = null,
+    Object? yearlyGroupedExpenses = null,
     Object? pageLoadTask = null,
     Object? addExpenseTask = null,
     Object? getCategoriesTask = null,
@@ -265,6 +331,34 @@ class __$$DashboardPageStateImplCopyWithImpl<$Res>
           ? _value.isFormValid
           : isFormValid // ignore: cast_nullable_to_non_nullable
               as bool,
+      totalAllValue: null == totalAllValue
+          ? _value.totalAllValue
+          : totalAllValue // ignore: cast_nullable_to_non_nullable
+              as double,
+      totalYearlyValue: null == totalYearlyValue
+          ? _value.totalYearlyValue
+          : totalYearlyValue // ignore: cast_nullable_to_non_nullable
+              as double,
+      totalMonthlyValue: null == totalMonthlyValue
+          ? _value.totalMonthlyValue
+          : totalMonthlyValue // ignore: cast_nullable_to_non_nullable
+              as double,
+      currentMonthExpenses: null == currentMonthExpenses
+          ? _value._currentMonthExpenses
+          : currentMonthExpenses // ignore: cast_nullable_to_non_nullable
+              as List<Expense>,
+      groupedExpenses: null == groupedExpenses
+          ? _value._groupedExpenses
+          : groupedExpenses // ignore: cast_nullable_to_non_nullable
+              as Map<String, List<Expense>>,
+      monthlyGroupedExpenses: null == monthlyGroupedExpenses
+          ? _value._monthlyGroupedExpenses
+          : monthlyGroupedExpenses // ignore: cast_nullable_to_non_nullable
+              as Map<int, List<Expense>>,
+      yearlyGroupedExpenses: null == yearlyGroupedExpenses
+          ? _value._yearlyGroupedExpenses
+          : yearlyGroupedExpenses // ignore: cast_nullable_to_non_nullable
+              as Map<int, Map<int, List<Expense>>>,
       pageLoadTask: null == pageLoadTask
           ? _value.pageLoadTask
           : pageLoadTask // ignore: cast_nullable_to_non_nullable
@@ -294,11 +388,22 @@ class _$DashboardPageStateImpl extends _DashboardPageState {
       required this.selectedDate,
       required final List<String> lsCategories,
       required this.isFormValid,
+      required this.totalAllValue,
+      required this.totalYearlyValue,
+      required this.totalMonthlyValue,
+      required final List<Expense> currentMonthExpenses,
+      required final Map<String, List<Expense>> groupedExpenses,
+      required final Map<int, List<Expense>> monthlyGroupedExpenses,
+      required final Map<int, Map<int, List<Expense>>> yearlyGroupedExpenses,
       required this.pageLoadTask,
       required this.addExpenseTask,
       required this.getCategoriesTask})
       : _lsExpenses = lsExpenses,
         _lsCategories = lsCategories,
+        _currentMonthExpenses = currentMonthExpenses,
+        _groupedExpenses = groupedExpenses,
+        _monthlyGroupedExpenses = monthlyGroupedExpenses,
+        _yearlyGroupedExpenses = yearlyGroupedExpenses,
         super._();
 
   @override
@@ -332,6 +437,50 @@ class _$DashboardPageStateImpl extends _DashboardPageState {
   @override
   final bool isFormValid;
   @override
+  final double totalAllValue;
+  @override
+  final double totalYearlyValue;
+  @override
+  final double totalMonthlyValue;
+  final List<Expense> _currentMonthExpenses;
+  @override
+  List<Expense> get currentMonthExpenses {
+    if (_currentMonthExpenses is EqualUnmodifiableListView)
+      return _currentMonthExpenses;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_currentMonthExpenses);
+  }
+
+  final Map<String, List<Expense>> _groupedExpenses;
+  @override
+  Map<String, List<Expense>> get groupedExpenses {
+    if (_groupedExpenses is EqualUnmodifiableMapView) return _groupedExpenses;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_groupedExpenses);
+  }
+
+  final Map<int, List<Expense>> _monthlyGroupedExpenses;
+  @override
+  Map<int, List<Expense>> get monthlyGroupedExpenses {
+    if (_monthlyGroupedExpenses is EqualUnmodifiableMapView)
+      return _monthlyGroupedExpenses;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_monthlyGroupedExpenses);
+  }
+
+//key integer month
+  final Map<int, Map<int, List<Expense>>> _yearlyGroupedExpenses;
+//key integer month
+  @override
+  Map<int, Map<int, List<Expense>>> get yearlyGroupedExpenses {
+    if (_yearlyGroupedExpenses is EqualUnmodifiableMapView)
+      return _yearlyGroupedExpenses;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_yearlyGroupedExpenses);
+  }
+
+//key year and month
+  @override
   final Task<void> pageLoadTask;
   @override
   final Task<void> addExpenseTask;
@@ -340,7 +489,7 @@ class _$DashboardPageStateImpl extends _DashboardPageState {
 
   @override
   String toString() {
-    return 'DashboardPageState(stateId: $stateId, error: $error, lsExpenses: $lsExpenses, expenseData: $expenseData, validationMessage: $validationMessage, selectedCategory: $selectedCategory, selectedDate: $selectedDate, lsCategories: $lsCategories, isFormValid: $isFormValid, pageLoadTask: $pageLoadTask, addExpenseTask: $addExpenseTask, getCategoriesTask: $getCategoriesTask)';
+    return 'DashboardPageState(stateId: $stateId, error: $error, lsExpenses: $lsExpenses, expenseData: $expenseData, validationMessage: $validationMessage, selectedCategory: $selectedCategory, selectedDate: $selectedDate, lsCategories: $lsCategories, isFormValid: $isFormValid, totalAllValue: $totalAllValue, totalYearlyValue: $totalYearlyValue, totalMonthlyValue: $totalMonthlyValue, currentMonthExpenses: $currentMonthExpenses, groupedExpenses: $groupedExpenses, monthlyGroupedExpenses: $monthlyGroupedExpenses, yearlyGroupedExpenses: $yearlyGroupedExpenses, pageLoadTask: $pageLoadTask, addExpenseTask: $addExpenseTask, getCategoriesTask: $getCategoriesTask)';
   }
 
   @override
@@ -364,6 +513,20 @@ class _$DashboardPageStateImpl extends _DashboardPageState {
                 .equals(other._lsCategories, _lsCategories) &&
             (identical(other.isFormValid, isFormValid) ||
                 other.isFormValid == isFormValid) &&
+            (identical(other.totalAllValue, totalAllValue) ||
+                other.totalAllValue == totalAllValue) &&
+            (identical(other.totalYearlyValue, totalYearlyValue) ||
+                other.totalYearlyValue == totalYearlyValue) &&
+            (identical(other.totalMonthlyValue, totalMonthlyValue) ||
+                other.totalMonthlyValue == totalMonthlyValue) &&
+            const DeepCollectionEquality()
+                .equals(other._currentMonthExpenses, _currentMonthExpenses) &&
+            const DeepCollectionEquality()
+                .equals(other._groupedExpenses, _groupedExpenses) &&
+            const DeepCollectionEquality().equals(
+                other._monthlyGroupedExpenses, _monthlyGroupedExpenses) &&
+            const DeepCollectionEquality()
+                .equals(other._yearlyGroupedExpenses, _yearlyGroupedExpenses) &&
             (identical(other.pageLoadTask, pageLoadTask) ||
                 other.pageLoadTask == pageLoadTask) &&
             (identical(other.addExpenseTask, addExpenseTask) ||
@@ -373,20 +536,28 @@ class _$DashboardPageStateImpl extends _DashboardPageState {
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      stateId,
-      error,
-      const DeepCollectionEquality().hash(_lsExpenses),
-      expenseData,
-      validationMessage,
-      selectedCategory,
-      selectedDate,
-      const DeepCollectionEquality().hash(_lsCategories),
-      isFormValid,
-      pageLoadTask,
-      addExpenseTask,
-      getCategoriesTask);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        stateId,
+        error,
+        const DeepCollectionEquality().hash(_lsExpenses),
+        expenseData,
+        validationMessage,
+        selectedCategory,
+        selectedDate,
+        const DeepCollectionEquality().hash(_lsCategories),
+        isFormValid,
+        totalAllValue,
+        totalYearlyValue,
+        totalMonthlyValue,
+        const DeepCollectionEquality().hash(_currentMonthExpenses),
+        const DeepCollectionEquality().hash(_groupedExpenses),
+        const DeepCollectionEquality().hash(_monthlyGroupedExpenses),
+        const DeepCollectionEquality().hash(_yearlyGroupedExpenses),
+        pageLoadTask,
+        addExpenseTask,
+        getCategoriesTask
+      ]);
 
   /// Create a copy of DashboardPageState
   /// with the given fields replaced by the non-null parameter values.
@@ -409,6 +580,13 @@ abstract class _DashboardPageState extends DashboardPageState {
       required final DateTime selectedDate,
       required final List<String> lsCategories,
       required final bool isFormValid,
+      required final double totalAllValue,
+      required final double totalYearlyValue,
+      required final double totalMonthlyValue,
+      required final List<Expense> currentMonthExpenses,
+      required final Map<String, List<Expense>> groupedExpenses,
+      required final Map<int, List<Expense>> monthlyGroupedExpenses,
+      required final Map<int, Map<int, List<Expense>>> yearlyGroupedExpenses,
       required final Task<void> pageLoadTask,
       required final Task<void> addExpenseTask,
       required final Task<void> getCategoriesTask}) = _$DashboardPageStateImpl;
@@ -432,6 +610,21 @@ abstract class _DashboardPageState extends DashboardPageState {
   List<String> get lsCategories;
   @override
   bool get isFormValid;
+  @override
+  double get totalAllValue;
+  @override
+  double get totalYearlyValue;
+  @override
+  double get totalMonthlyValue;
+  @override
+  List<Expense> get currentMonthExpenses;
+  @override
+  Map<String, List<Expense>> get groupedExpenses;
+  @override
+  Map<int, List<Expense>> get monthlyGroupedExpenses; //key integer month
+  @override
+  Map<int, Map<int, List<Expense>>>
+      get yearlyGroupedExpenses; //key year and month
   @override
   Task<void> get pageLoadTask;
   @override

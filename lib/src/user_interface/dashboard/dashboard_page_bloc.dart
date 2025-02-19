@@ -1,3 +1,5 @@
+import 'package:expense_tracker/src/features/expenses/entities/expense_data.dart';
+import 'package:expense_tracker/src/user_interface/_core/constants/AppConstants.dart';
 
 import '../../features/expenses/add_expense_module/add_expense.dart';
 import '../../features/expenses/get_all_expenses/get_all_expenses.dart';
@@ -24,7 +26,22 @@ class DashboardPageBloc extends UseCaseBloc<DashboardPageEvent, DashboardPageSta
             failed: (error) => state.copyWith(error: error),
             done: (response) {
               final data = response as GetAllExpensesResponse;
-              return state.copyWith(lsExpenses: data.lsExpenses);
+              final totalYearlySummary = state.totalYearlyAmount(data.lsExpenses);
+              final totalMonthlySummary = state.totalMonthlyAmount(data.lsExpenses);
+              final totalAllSummary = state.totalAllAmount(data.lsExpenses);
+              final mapOfExpenses = state.groupExpensesByDate(data.lsExpenses);
+              final currentMonthExp = mapOfExpenses[AppConstants.currentMonthKey]??[];
+              final mapOfMonthlyExpenses = state.getMonthlyGroupedExpenses(mapOfExpenses[AppConstants.currentYearKey]??[]);
+              final mapOfYearlyExpenses = state.getYearlyGroupedExpenses(mapOfExpenses[AppConstants.allKey]??[]);
+              return state.copyWith(lsExpenses: data.lsExpenses,
+                  totalYearlyValue: totalYearlySummary,
+                  totalMonthlyValue: totalMonthlySummary,
+                  totalAllValue: totalAllSummary,
+                  currentMonthExpenses: currentMonthExp,
+                  monthlyGroupedExpenses: mapOfMonthlyExpenses,
+                  yearlyGroupedExpenses: mapOfYearlyExpenses
+
+              );
             },
             orElse: () => state,
           )
@@ -46,6 +63,11 @@ class DashboardPageBloc extends UseCaseBloc<DashboardPageEvent, DashboardPageSta
         emit(state.copyWith(
           validationMessage:
           "Description field is mandatory and cannot be left empty",
+          isFormValid: false,
+        ));
+      } else if (state.expenseData.date == DateTime(2000)) {
+        emit(state.copyWith(
+          validationMessage: "Please select the date",
           isFormValid: false,
         ));
       } else {
@@ -122,9 +144,38 @@ class DashboardPageBloc extends UseCaseBloc<DashboardPageEvent, DashboardPageSta
             (Task<AddExpenseResponse> response) => response
             .maybeWhen(
           failed: (error) => state.copyWith(error: error),
+          done: (value) {
+            final data = value as AddExpenseResponse;
+            final expensesList = List.of(state.lsExpenses);
+            expensesList.add(data.expense);
+            final totalYearlySummary = state.totalYearlyAmount(expensesList);
+            final totalMonthlySummary = state.totalMonthlyAmount(expensesList);
+            final totalAllSummary = state.totalAllAmount(expensesList);
+            final mapOfExpenses = state.groupExpensesByDate(expensesList);
+            final currentMonthExp = mapOfExpenses[AppConstants.currentMonthKey]??[];
+            final mapOfMonthlyExpenses = state.getMonthlyGroupedExpenses(mapOfExpenses[AppConstants.currentYearKey]??[]);
+            final mapOfYearlyExpenses = state.getYearlyGroupedExpenses(mapOfExpenses[AppConstants.allKey]??[]);
+            return state.copyWith(lsExpenses: expensesList,
+                groupedExpenses: mapOfExpenses,
+                totalYearlyValue: totalYearlySummary,
+                totalMonthlyValue: totalMonthlySummary,
+                totalAllValue: totalAllSummary,
+                currentMonthExpenses: currentMonthExp,
+                monthlyGroupedExpenses: mapOfMonthlyExpenses,
+                yearlyGroupedExpenses: mapOfYearlyExpenses,
+                expenseData: ExpenseData.empty()
+            );
+          },
           orElse: () => state,
-        )
-            .copyWith(addExpenseTask: response));
+        ).copyWith(addExpenseTask: response));
+
+    on<ResetTasks>((event, emit) {
+      switch (event.taskName) {
+        case 'addExpenseTask':
+          emit(state.copyWith(addExpenseTask: const Task.idle()));
+          break;
+      }
+    });
 
     add(const OnPageLoaded());
   }

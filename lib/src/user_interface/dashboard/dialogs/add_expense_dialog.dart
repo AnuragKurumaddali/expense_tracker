@@ -18,17 +18,37 @@ class AddExpenseDialog extends StatefulWidget {
 }
 
 class _AddExpenseDialogState extends State<AddExpenseDialog> {
+
+  late TextEditingController titleController;
+  late TextEditingController descriptionController;
+  late TextEditingController categoryTextController;
+
+  @override
+  void initState() {
+    super.initState();
+    titleController = TextEditingController();
+    descriptionController = TextEditingController();
+    categoryTextController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    // Dispose controllers when widget is disposed
+    titleController.dispose();
+    descriptionController.dispose();
+    categoryTextController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    final titleController = TextEditingController();
-    final descriptionController = TextEditingController();
-    final categoryTextController = TextEditingController();
 
     return BlocConsumer<DashboardPageBloc, DashboardPageState>(
       listener: (context, state) {
         if (state.addExpenseTask.isDone == true) {
           CustomSnackbar.show(
               context: context, message: 'Expense Added Successfully');
+          const Events.resetTasks('addExpenseTask').publish(context);
           context.pop();
         }
       },

@@ -43,15 +43,45 @@ class LocalDataStore implements LocalDataStoreService {
 
   @override
   Future<void> saveExpense(Expense expense) async {
-    // final db = await database;
     await _localDataSource.insert(table, expense.toMap());
   }
 
   @override
   Future<List<Expense>> getAllExpenses() async {
-    // final db = await database;
     final result = await _localDataSource.query(table);
     return result.map((json) => Expense.fromMap(json)).toList();
+  }
+
+  Future<double> getYearlyTotal(int year) async {
+    final result = await _localDataSource.rawQuery('''
+      SELECT SUM($columnAmount) 
+      FROM $table 
+      WHERE strftime('%Y', $columnDate) = ?
+    ''', [year.toString()]);
+
+    if (result.isNotEmpty && result[0].containsKey('SUM($columnAmount)')) {
+      var sum = result[0]['SUM($columnAmount)'];
+      if (sum != null) {
+        return sum is double ? sum : double.tryParse(sum.toString()) ?? 0.0;
+      }
+    }
+    return 0.0;
+  }
+
+  Future<double> getMonthlyTotal(int year, int month) async {
+    final result = await _localDataSource.rawQuery('''
+      SELECT SUM($columnAmount) 
+      FROM $table 
+      WHERE strftime('%Y-%m', $columnDate) = ?
+    ''', ['${year.toString()}-${month.toString().padLeft(2, '0')}']);
+
+    if (result.isNotEmpty && result[0].containsKey('SUM($columnAmount)')) {
+      var sum = result[0]['SUM($columnAmount)'];
+      if (sum != null) {
+        return sum is double ? sum : double.tryParse(sum.toString()) ?? 0.0;
+      }
+    }
+    return 0.0;
   }
 
 }
