@@ -58,7 +58,7 @@ class UpdateExpenses implements SyncUseCase<UpdateExpenseRequest, Task<UpdateExp
       final updateForm = switch(request){
         (final UpdateExpenseAmount r) => r.expenseData.updateAmount(r.amount),
         (final UpdateExpenseCategory r) => r.expenseData.updateCategory(r.category),
-        (final UpdateExpenseDescription r) => r.expenseData.updateDescription(r.description),
+        (final UpdateExpenseDescription r) => r.expenseData.updateDescription(r.description.trim()),
         (final UpdateExpenseDate r) => r.expenseData.updateDate(r.dateTime),
       };
       return Task.done(UpdateExpenseResponse(request, updateForm));

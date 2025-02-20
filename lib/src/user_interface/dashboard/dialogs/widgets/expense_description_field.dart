@@ -10,6 +10,7 @@ class ExpenseDescriptionField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PrimaryTextField(
+      key: const Key('expenseDescriptionField'),
       hintText: 'Enter Description',
       controller: descriptionController,
       onChanged: (v) => Events.updateDescription(v).publish(context),

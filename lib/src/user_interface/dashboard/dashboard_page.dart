@@ -23,6 +23,7 @@ class DashboardPage extends StatelessWidget {
           isColoredAppBar: true,
           bottomBar: const SizedBox(),
           fab: FloatingActionButton(
+            key: const Key('addExpenseButton'),
             onPressed: () => _showAddExpenseDialog(context: context),
             backgroundColor: Colors.black,
             child: const Icon(Icons.add, color: Colors.white),

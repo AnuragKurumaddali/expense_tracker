@@ -10,6 +10,7 @@ class ExpenseAmountField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PrimaryTextField(
+      key: const Key('expenseAmountField'),
       hintText: 'Amount',
       controller: amountController,
       prefixIcon:  const Icon(Icons.euro, color: Colors.black, size: 14,),
