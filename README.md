@@ -4,20 +4,13 @@ A **Flutter** application for tracking expenses, built with a **modular architec
 
 # Expense Tracker App
 
-<div style="display: flex; justify-content: space-between; margin: 10px;">
-  <div style="flex: 1; margin: 10px;">
-    <img src="images/1.jpg" width="200" alt="App Screenshot 1">
-  </div>
-  <div style="flex: 1; margin: 10px;">
-    <img src="images/2.jpg" width="200" alt="App Screenshot 2">
-  </div>
-  <div style="flex: 1; margin: 10px;">
-    <img src="images/3.jpg" width="200" alt="App Screenshot 3">
-  </div>
-  <div style="flex: 1; margin: 10px;">
-    <img src="images/4.jpg" width="200" alt="App Screenshot 4">
-  </div>
-</div>
+<p align="center">
+  <img src="images/1.jpg" width="200" alt="App Screenshot 1">
+  <img src="images/2.jpg" width="200" alt="App Screenshot 2">
+  <img src="images/3.jpg" width="200" alt="App Screenshot 3">
+  <img src="images/4.jpg" width="200" alt="App Screenshot 4">
+</p>
+
 
 ## Features
 
