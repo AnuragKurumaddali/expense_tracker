@@ -2,6 +2,23 @@
 
 A **Flutter** application for tracking expenses, built with a **modular architecture** and **clean architecture principles**. This app uses **SQLite** for local storage and **dependency injection** for better maintainability.
 
+# Expense Tracker App
+
+<div style="display: flex; justify-content: space-between; margin: 10px;">
+  <div style="flex: 1; margin: 10px;">
+    <img src="images/1.jpg" width="200" alt="App Screenshot 1">
+  </div>
+  <div style="flex: 1; margin: 10px;">
+    <img src="images/2.jpg" width="200" alt="App Screenshot 2">
+  </div>
+  <div style="flex: 1; margin: 10px;">
+    <img src="images/3.jpg" width="200" alt="App Screenshot 3">
+  </div>
+  <div style="flex: 1; margin: 10px;">
+    <img src="images/4.jpg" width="200" alt="App Screenshot 4">
+  </div>
+</div>
+
 ## Features
 
 - **Add Expenses**: Easily add expenses with a description, amount, category, and date.
@@ -94,3 +111,8 @@ The project includes various test cases to ensure the app functions correctly, f
 - **Add Expense Button Test**  
   **File:** `test/widget/dashboard/add_expense_button_test.dart`  
   **Description:** Tests the functionality of the `AddExpenseButton` widget. It checks whether the button is enabled or disabled based on the validity of the form inputs. The test ensures that the button behaves correctly when the form is valid or invalid.
+
+## Download the APK
+You can download the APK for the Expense Tracker app from the link below:
+
+[Download the APK](release_build/app-release.apk)
