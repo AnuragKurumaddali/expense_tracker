@@ -16,6 +16,7 @@ class AddExpenseButton extends StatelessWidget {
       child: SizedBox(
         width: MediaQuery.of(context).size.width * 0.8,
         child: PlanarButton(
+            key: const Key('saveExpenseButton'),
             disabled: !isFormValid,
             label: 'Save Expense',
             onPressed: () {
