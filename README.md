@@ -78,7 +78,7 @@ This command runs the code generator for dependencies and other generated files.
 
 ## Test Cases
 
-The project includes various test cases to ensure the app functions correctly, focusing on both integration and unit tests.
+The project includes various test cases to ensure the app functions correctly, focusing on integration, unit and widget tests.
 
 ### Integration Tests
 
